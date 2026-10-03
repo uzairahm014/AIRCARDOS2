@@ -503,10 +503,8 @@ public final class TendiesEngine {
         let name = descriptorURL.lastPathComponent
         if isUUIDShaped(name) { return name }
         // The archive may nest the descriptor under a UUID-named parent.
-        if let parent = descriptorURL.deletingLastPathComponent().lastPathComponent,
-           isUUIDShaped(parent) {
-            return parent
-        }
+        let parent = descriptorURL.deletingLastPathComponent().lastPathComponent
+        if isUUIDShaped(parent) { return parent }
         return UUID().uuidString.uppercased()
     }
 
