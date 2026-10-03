@@ -39,7 +39,7 @@ public struct AIChatView: View {
             .navigationBarTitleDisplayMode(.inline)
             .background(
                 // The island is pinned into the notch band, above everything.
-                NotchIsland(state: island, geo: NotchGeometry(topInset: 47, width: 393)) {
+                NotchIsland(state: island, geo: .current) {
                     panelContent
                 }
                 .allowsHitTesting(true),
@@ -136,7 +136,18 @@ public struct AIChatView: View {
             // hardware Dynamic Island this also fills the island; this one has
             // a notch, so it shows on the Lock Screen only.
             Button {
-                Task { await liveActivity.stop() }
+                // This used to call stop() unconditionally, so the button was a
+                // dead control: the Live Activity could never be started from
+                // the app, which meant the widget extension never rendered.
+                Task {
+                    if liveActivity.isRunning {
+                        await liveActivity.stop()
+                    } else {
+                        // isEnabled's didSet calls sync() -> start(). Do not also
+                        // call start() here or two activities get requested.
+                        liveActivity.isEnabled = true
+                    }
+                }
             } label: {
                 Label(
                     liveActivity.isRunning ? "Hide from Lock Screen" : "Show on Lock Screen",

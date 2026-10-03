@@ -18,6 +18,9 @@
 // BUILD STATUS: not compiled here (no macOS/Xcode). See docs/BUILD-BLOCKER.md.
 
 import SwiftUI
+#if canImport(UIKit)
+import UIKit
+#endif
 
 /// Geometry of the top inset region on notched iPhones.
 ///
@@ -53,6 +56,41 @@ public struct NotchGeometry: Equatable, Sendable {
 
     /// Corner radius: a capsule is half its own height.
     public func capsuleRadius(height: CGFloat) -> CGFloat { height / 2 }
+}
+
+extension NotchGeometry {
+    /// The real top inset, measured from the live key window.
+    ///
+    /// This used to be hardcoded to 47pt, which is only correct on one device
+    /// in one orientation. The notch band is 47-48pt on a 6.1" notched phone
+    /// and 59pt on a Dynamic Island phone, so a hardcoded value put the island
+    /// in the wrong place on anything but the device it was guessed on.
+    public static var measuredTopInset: CGFloat? {
+        #if canImport(UIKit)
+        return MainActor.assumeIsolated {
+            UIApplication.shared.connectedScenes
+                .compactMap { $0 as? UIWindowScene }
+                .flatMap(\.windows)
+                .first(where: \.isKeyWindow)?
+                .safeAreaInsets.top
+        }
+        #else
+        return nil
+        #endif
+    }
+
+    /// Geometry for the device this app is actually running on.
+    public static var current: NotchGeometry {
+        #if canImport(UIKit)
+        let size = MainActor.assumeIsolated { UIScreen.main.bounds.size }
+        #else
+        let size = CGSize(width: 393, height: 852)
+        #endif
+        return NotchGeometry(
+            topInset: measuredTopInset ?? 47,
+            width: size.width
+        )
+    }
 }
 
 public enum NotchIslandSize {
@@ -169,7 +207,11 @@ private let overlay: () -> Overlay
             }
         }
         .ignoresSafeArea(edges: .top)
-        .frame(height: geo.topInset + NotchIslandSize.expandedHeight + 40)
+        // Use the measured inset for the reserved height too, so the view does
+        // not reserve 47pt of notch band on a phone whose band is a different
+        // height (and clip the expanded panel as a result).
+        .frame(height: (NotchGeometry.measuredTopInset ?? geo.topInset)
+            + NotchIslandSize.expandedHeight + 40)
     }
 
     // MARK: - Pieces
@@ -274,8 +316,7 @@ public struct AIIslandChrome: View {
         self.state = state
     }
 
-    public var body: some View {
-        NotchIsland(state: state, geo: NotchGeometry(topInset: 47, width: 393)) {
+    public var body: some View {            NotchIsland(state: state, geo: .current) {
             VStack(spacing: 10) {
                 Text(state.detail.isEmpty ? state.phase.label : state.detail)
                     .font(.callout)
