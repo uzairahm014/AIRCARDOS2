@@ -1,1 +1,0 @@
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:72:9: error: static member 'logSink' cannot be used on instance of type 'AirCardSystemBridge'
