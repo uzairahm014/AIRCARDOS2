@@ -75,3 +75,23 @@ jobs:
           name: build-log
           path: build/xcodebuild.log
           if-no-files-found: warn
+
+      # Write the failure straight back into the repository. Without this the
+      # only way to see why a build failed is to open the GitHub web UI and
+      # read the log by hand, which is a poor way to iterate.
+      - name: Commit build log back to the repo
+        if: always()
+        run: |
+          set -euo pipefail
+          mkdir -p build-reports
+          if [ -f build/xcodebuild.log ]; then
+            cp build/xcodebuild.log build-reports/xcodebuild.log
+            grep -E "error:|warning: .*deprecat" build/xcodebuild.log \
+              | sort -u | head -200 > build-reports/errors.txt || true
+          fi
+          echo "finished at $(date -u +%FT%TZ)" > build-reports/status.txt
+          git config user.name "aircard-build-bot"
+          git config user.email "aircard-build-bot@users.noreply.github.com"
+          git add -f build-reports || true
+          git commit -q -m "build report $(date -u +%s)" || echo "nothing to commit"
+          git push || echo "could not push report (branch moved?)"

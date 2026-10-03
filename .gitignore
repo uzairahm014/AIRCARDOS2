@@ -1,12 +1,8 @@
-# Build outputs
 build/
 DerivedData/
 *.ipa
 *.dSYM/
-
-# macOS noise
 .DS_Store
-
-# Rust
 rust-core/target/
 target/
+build-reports/
