@@ -1,0 +1,241 @@
+{
+  "category": "Passcode, Wallet and PosterBoard",
+  "tweaks": [
+    {
+      "id": "passcode.theme",
+      "name": "Passcode theme (.passthm)",
+      "category": "Passcode",
+      "description": "Replace the lock screen keypad artwork from a .passthm package, across every locale and the bold variants.",
+      "icon": "⌸",
+      "tags": [
+        "lock screen",
+        "keypad",
+        "theme",
+        "numbers",
+        "passthm"
+      ],
+      "backend": "air_lift",
+      "risk": "low",
+      "effect": "reboot",
+      "requires_backup": false,
+      "min_ios": "16.0",
+      "verified_builds": [
+        "24A437"
+      ],
+      "paths": [
+        "/var/mobile/Library/Caches/TelephonyUI-10"
+      ],
+      "rollback": "No original can be captured: AirLift cannot read pre-existing files. TelephonyUI regenerates this cache, so apply a known-good theme over it instead. Requires Bold Text OFF or iOS renders vector fonts.",
+      "unsupported_reason": "",
+      "impl_id": "Passcode.CustomTheme",
+      "page": "Passcode"
+    },
+    {
+      "id": "passcode.key_preset",
+      "name": "Passcode per-key artwork",
+      "category": "Passcode",
+      "description": "Write individual digit glyphs without needing a full .passthm package.",
+      "icon": "◉",
+      "tags": [
+        "lock screen",
+        "keypad",
+        "single key",
+        "glyph"
+      ],
+      "backend": "air_lift",
+      "risk": "low",
+      "effect": "reboot",
+      "requires_backup": false,
+      "min_ios": "16.0",
+      "verified_builds": [
+        "24A437"
+      ],
+      "paths": [
+        "/var/mobile/Library/Caches/TelephonyUI-10"
+      ],
+      "rollback": "Write a known-good theme over it.",
+      "unsupported_reason": "",
+      "impl_id": "Passcode.CustomTheme",
+      "page": "Passcode"
+    },
+    {
+      "id": "passcode.clock_font",
+      "name": "Lock screen clock font and size",
+      "category": "Passcode",
+      "description": "Change the lock screen clock typeface, size, position and colour.",
+      "icon": "◷",
+      "tags": [
+        "lock screen",
+        "clock",
+        "font",
+        "size",
+        "color"
+      ],
+      "backend": "unsupported",
+      "risk": "medium",
+      "effect": "reboot",
+      "unsupported_reason": "Clock typography on iOS 27 is rendered from SpringBoard's compiled resources and the user's text-size settings. No writable preference exposes font choice, size in points or position; it needs SpringBoard code hooks, which are jailbreak-tier."
+    },
+    {
+      "id": "passcode.hide_date",
+      "name": "Hide the lock screen date",
+      "category": "Passcode",
+      "description": "Remove the date line under the lock screen clock.",
+      "icon": "▤",
+      "tags": [
+        "lock screen",
+        "date",
+        "hide"
+      ],
+      "backend": "unsupported",
+      "risk": "low",
+      "effect": "none",
+      "unsupported_reason": "Date visibility is not exposed through any writable store; it is decided by SpringBoard's lock screen layout at runtime."
+    },
+    {
+      "id": "wallet.card_skin",
+      "name": "Wallet card skin",
+      "category": "Wallet",
+      "description": "Replace a single card's background artwork (PNG at 2x/3x plus the PDF variant) inside its .pkpass bundle.",
+      "icon": "▦",
+      "tags": [
+        "apple pay",
+        "wallet",
+        "card",
+        "skin",
+        "artwork"
+      ],
+      "backend": "air_lift",
+      "risk": "low",
+      "effect": "none",
+      "requires_backup": false,
+      "min_ios": "15.0",
+      "paths": [
+        "/var/mobile/Library/Passes/Cards"
+      ],
+      "rollback": "The write mechanism is verified, but the original artwork cannot be captured and the card bundle on iOS 27 is not at this path, so a revert needs the card to be re-added in Wallet.",
+      "unsupported_reason": "",
+      "impl_id": "Wallet.CardSkin",
+      "page": "Wallet"
+    },
+    {
+      "id": "wallet.bulk_skin",
+      "name": "Wallet bulk card skin",
+      "category": "Wallet",
+      "description": "Apply the same artwork to every card hash at once.",
+      "icon": "▦",
+      "tags": [
+        "apple pay",
+        "wallet",
+        "bulk",
+        "all cards"
+      ],
+      "backend": "air_lift",
+      "risk": "medium",
+      "effect": "none",
+      "requires_backup": false,
+      "min_ios": "15.0",
+      "paths": [
+        "/var/mobile/Library/Passes/Cards"
+      ],
+      "rollback": "Same limits as the single-card skin.",
+      "unsupported_reason": "",
+      "impl_id": "Wallet.CardSkin",
+      "page": "Wallet"
+    },
+    {
+      "id": "wallet.card_discovery",
+      "name": "Auto-discover card hashes",
+      "category": "Wallet",
+      "description": "Find Wallet card hashes by streaming the device syslog while Wallet is opened.",
+      "icon": "◌",
+      "tags": [
+        "apple pay",
+        "wallet",
+        "discover",
+        "scan",
+        "syslog"
+      ],
+      "backend": "air_lift",
+      "risk": "low",
+      "effect": "none",
+      "requires_backup": false,
+      "min_ios": "15.0",
+      "verified_builds": [
+        "24A437"
+      ],
+      "paths": [],
+      "rollback": "Read-only; nothing to undo.",
+      "unsupported_reason": "",
+      "impl_id": "Wallet.CardSkin",
+      "page": "Wallet"
+    },
+    {
+      "id": "posterboard.tendies",
+      "name": "PosterBoard wallpaper (.tendies)",
+      "category": "PosterBoard",
+      "description": "Install animated PosterBoard descriptors at structure version 61 and force a cache refresh.",
+      "icon": "◐",
+      "tags": [
+        "wallpaper",
+        "animated",
+        "tendies",
+        "posterboard",
+        "lock screen"
+      ],
+      "backend": "air_lift",
+      "risk": "medium",
+      "effect": "respring",
+      "requires_backup": false,
+      "min_ios": "17.0",
+      "paths": [
+        "<container>/Library/Application Support/PRBPosterExtensionDataStore/61"
+      ],
+      "rollback": "Write the unprotectedUserDefaults.plist that makes PosterBoard discard the injected descriptors.",
+      "unsupported_reason": "",
+      "impl_id": "PosterBoard.CustomWallpaper",
+      "page": "PosterBoard"
+    },
+    {
+      "id": "posterboard.container_discovery",
+      "name": "Auto-discover the PosterBoard container",
+      "category": "PosterBoard",
+      "description": "Locate the PosterBoard app container UUID automatically instead of asking the user for it.",
+      "icon": "◌",
+      "tags": [
+        "posterboard",
+        "wallpaper",
+        "container",
+        "discover"
+      ],
+      "backend": "unsupported",
+      "risk": "low",
+      "effect": "none",
+      "unsupported_reason": "The container lives at /var/mobile/Containers/Data/Application/<uuid>, and AirLift exposes no directory listing or read primitive, so the UUID cannot be enumerated. The user must paste it in. Measured on iPhone14,3 / 24A437."
+    },
+    {
+      "id": "wallpaper.tendies_library",
+      "name": "Wallpaper library (.tendies packs)",
+      "category": "Wallpapers",
+      "description": "Import, preview, organise and apply .tendies wallpaper packs.",
+      "icon": "▤",
+      "tags": [
+        "wallpaper",
+        "library",
+        "import",
+        "preview",
+        "pack"
+      ],
+      "backend": "theme",
+      "risk": "low",
+      "effect": "respring",
+      "requires_backup": false,
+      "min_ios": "17.0",
+      "paths": [],
+      "rollback": "Remove the pack from the library; the device copy is replaced by the next apply.",
+      "unsupported_reason": "",
+      "impl_id": "PosterBoard.CustomWallpaper",
+      "page": "PosterBoard"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+name: AirCard-iOS
+options:
+  bundleIdPrefix: com.mak5er
+  deploymentTarget:
+    iOS: "18.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.3.1"
+    CURRENT_PROJECT_VERSION: "1.3.1"
+    TARGETED_DEVICE_FAMILY: "1"
+    # AirliftFFI is arm64-only (aws-lc-rs / idevice); drop x86_64 simulator slice.
+    EXCLUDED_ARCHS[sdk=iphonesimulator*]: x86_64
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: ""
+
+targets:
+  AirCard-iOS:
+    type: application
+    platform: iOS
+    sources:
+      - path: ios-app
+      # The tweak library is data shared with the desktop engine. The iOS app
+      # parses the same JSON so a tweak cannot look supported on one platform
+      # and unsupported on the other.
+      - path: core-engine/library
+        buildPhase: resources
+        type: folder
+    dependencies:
+      - framework: AirliftFFI.xcframework
+        embed: false
+    settings:
+      base:
+        PRODUCT_NAME: "AirCard-iOS"
+        PRODUCT_BUNDLE_IDENTIFIER: com.mak5er.aircard
+        INFOPLIST_FILE: ios-app/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        # idevice's static lib pulls in C++ symbols (aws-lc); link libc++.
+        OTHER_LDFLAGS: "-lc++"
+        GENERATE_INFOPLIST_FILE: NO
+  AirCard-iOSTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: tests
+    dependencies:
+      - target: AirCard-iOS
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.mak5er.aircard.tests
+
+schemes:
+  AirCard-iOS:
+    build:
+      targets:
+        AirCard-iOS: all
+    test:
+      targets:
+        - AirCard-iOSTests

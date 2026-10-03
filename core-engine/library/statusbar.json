@@ -1,0 +1,157 @@
+{
+  "category": "Status Bar",
+  "tweaks": [
+    {
+      "id": "statusbar.carrier",
+      "name": "Status bar carrier name",
+      "category": "Status Bar",
+      "description": "Replace the carrier text shown next to the signal bars with a custom name, single or dual SIM.",
+      "icon": "◈",
+      "tags": [
+        "carrier",
+        "sim",
+        "text",
+        "network",
+        "signal"
+      ],
+      "backend": "air_lift",
+      "risk": "medium",
+      "effect": "reboot",
+      "requires_backup": false,
+      "min_ios": "27.0",
+      "verified_builds": [
+        "24A437"
+      ],
+      "paths": [
+        "/var/mobile/Library/SpringBoard/StatusBarOverrides.archive"
+      ],
+      "rollback": "Write the reset record. SpringBoard then deletes its own archive, which needs no delete primitive.",
+      "unsupported_reason": "",
+      "impl_id": "StatusBar.CustomCarrier",
+      "page": "StatusBar"
+    },
+    {
+      "id": "statusbar.carrier.reset",
+      "name": "Reset carrier name to native",
+      "category": "Status Bar",
+      "description": "Restore whatever the SIM actually reports by writing the empty StatusBarOverrides record.",
+      "icon": "◈",
+      "tags": [
+        "carrier",
+        "reset",
+        "restore",
+        "default"
+      ],
+      "backend": "air_lift",
+      "risk": "low",
+      "effect": "reboot",
+      "requires_backup": false,
+      "min_ios": "27.0",
+      "verified_builds": [
+        "24A437"
+      ],
+      "paths": [
+        "/var/mobile/Library/SpringBoard/StatusBarOverrides.archive"
+      ],
+      "rollback": "Nothing to undo; this is itself the restore path.",
+      "unsupported_reason": "",
+      "impl_id": "StatusBar.CustomCarrier",
+      "page": "StatusBar"
+    },
+    {
+      "id": "statusbar.battery_icon",
+      "name": "Custom battery icon",
+      "category": "Status Bar",
+      "description": "Swap the battery glyph artwork.",
+      "icon": "▮",
+      "tags": [
+        "battery",
+        "icon",
+        "glyph"
+      ],
+      "backend": "unsupported",
+      "risk": "high",
+      "effect": "respring",
+      "requires_backup": true,
+      "unsupported_reason": "iOS 27's SystemStatusUI override record has no field for the battery glyph. The legacy statusBarOverrides engine that did support it is gated behind /var/preferences/FeatureFlags/Settings.plist, which is outside AirLift's write scope. 13 documented upstream attempts reached the same wall."
+    },
+    {
+      "id": "statusbar.battery_percent",
+      "name": "Force battery percentage",
+      "category": "Status Bar",
+      "description": "Always show the numeric battery percentage next to the icon.",
+      "icon": "%",
+      "tags": [
+        "battery",
+        "percentage",
+        "number"
+      ],
+      "backend": "unsupported",
+      "risk": "low",
+      "effect": "none",
+      "unsupported_reason": "This is a per-device Accessibility setting stored in com.apple.springboard preferences; there is no writable file that exposes it and iOS ignores any value outside the real Accessibility store."
+    },
+    {
+      "id": "statusbar.time_format",
+      "name": "Custom time format / 24-hour",
+      "category": "Status Bar",
+      "description": "Force 24-hour time or a custom date string in the status bar.",
+      "icon": "◷",
+      "tags": [
+        "time",
+        "clock",
+        "24 hour",
+        "format"
+      ],
+      "backend": "unsupported",
+      "risk": "low",
+      "effect": "none",
+      "unsupported_reason": "Time format lives in the user's locale settings (.GlobalPreferences under Managed Preferences), which is outside AirLift's write scope."
+    },
+    {
+      "id": "statusbar.hide_wifi",
+      "name": "Hide Wi-Fi / cellular indicators",
+      "category": "Status Bar",
+      "description": "Remove the Wi-Fi, cellular or VPN glyphs from the status bar.",
+      "icon": "▁",
+      "tags": [
+        "wifi",
+        "cellular",
+        "vpn",
+        "hide",
+        "network"
+      ],
+      "backend": "unsupported",
+      "risk": "high",
+      "effect": "respring",
+      "unsupported_reason": "Indicator visibility is decided inside SystemStatusUI from system status; no user-domain file exposes it."
+    },
+    {
+      "id": "statusbar.minimal",
+      "name": "Minimal status bar (carrier only)",
+      "category": "Status Bar",
+      "description": "Reduce the iOS 27 status bar to just the carrier name.",
+      "icon": "▬",
+      "tags": [
+        "minimal",
+        "clean",
+        "simple"
+      ],
+      "backend": "air_lift",
+      "risk": "medium",
+      "effect": "reboot",
+      "requires_backup": false,
+      "min_ios": "27.0",
+      "verified_builds": [
+        "24A437"
+      ],
+      "paths": [
+        "/var/mobile/Library/SpringBoard/StatusBarOverrides.archive"
+      ],
+      "rollback": "Write the reset record.",
+      "unsupported_reason": "",
+      "impl_id": "StatusBar.CustomCarrier",
+      "page": "StatusBar"
+    }
+  ]
+}

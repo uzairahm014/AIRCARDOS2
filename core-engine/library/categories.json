@@ -1,0 +1,651 @@
+{
+  "category": "Home Screen, Lock Screen, SpringBoard and system UI",
+  "tweaks": [
+    {
+      "id": "home.hide_search",
+      "name": "Hide the Home Screen search button",
+      "category": "Home Screen",
+      "description": "Remove the Search pill from the bottom of the Home Screen.",
+      "icon": "⌕",
+      "tags": [
+        "home screen",
+        "search",
+        "hide",
+        "pill"
+      ],
+      "backend": "unsupported",
+      "risk": "low",
+      "effect": "respring",
+      "unsupported_reason": "Search button visibility is a SpringBoard layout decision read from com.apple.springboard preferences. AirLift can only write into the media and cache domains, and there is no key that hides the button."
+    },
+    {
+      "id": "home.hide_page_dots",
+      "name": "Hide Home Screen page dots",
+      "category": "Home Screen",
+      "description": "Remove the page indicator dots at the bottom of the Home Screen.",
+      "icon": "••",
+      "tags": [
+        "home screen",
+        "page dots",
+        "hide"
+      ],
+      "backend": "unsupported",
+      "risk": "low",
+      "effect": "respring",
+      "unsupported_reason": "Same blocker as the search button: the page-dot visibility flag lives in SpringBoard preferences with no writable path from AirLift."
+    },
+    {
+      "id": "home.hide_dock",
+      "name": "Hide the dock",
+      "category": "Home Screen",
+      "description": "Remove the dock row at the bottom of the Home Screen.",
+      "icon": "▤",
+      "tags": [
+        "home screen",
+        "dock",
+        "hide"
+      ],
+      "backend": "unsupported",
+      "risk": "medium",
+      "effect": "respring",
+      "unsupported_reason": "Dock visibility follows a SpringBoard preference; there is no writable file that toggles it without a preference-write primitive AirLift does not have."
+    },
+    {
+      "id": "home.hide_labels",
+      "name": "Hide app icon labels",
+      "category": "Home Screen",
+      "description": "Remove the text label under each Home Screen icon.",
+      "icon": "▢",
+      "tags": [
+        "home screen",
+        "label",
+        "text",
+        "icon"
+      ],
+      "backend": "unsupported",
+      "risk": "low",
+      "effect": "respring",
+      "unsupported_reason": "Label rendering is decided per-icon by SpringBoard at layout time; the only supported control is the system-wide App Name size in Settings, which AirCard cannot write."
+    },
+    {
+      "id": "home.custom_labels",
+      "name": "Rename app icons",
+      "category": "Home Screen",
+      "description": "Give any app a custom name on the Home Screen.",
+      "icon": "✎",
+      "tags": [
+        "home screen",
+        "label",
+        "rename",
+        "custom"
+      ],
+      "backend": "unsupported",
+      "risk": "low",
+      "effect": "none",
+      "unsupported_reason": "Home Screen labels come from each app's Info.plist inside its bundle. Editing them requires rewriting a signed bundle, which AirLift cannot do — it has no read primitive to recover a bundle and no code-signature capability."
+    },
+    {
+      "id": "home.icon_size",
+      "name": "Change icon size and spacing",
+      "category": "Home Screen",
+      "description": "Make icons larger or smaller and adjust the grid spacing.",
+      "icon": "⬚",
+      "tags": [
+        "home screen",
+        "icon",
+        "size",
+        "spacing",
+        "grid"
+      ],
+      "backend": "unsupported",
+      "risk": "medium",
+      "effect": "respring",
+      "unsupported_reason": "Icon size and grid metrics are SpringBoard layout constants on iOS 27. The user's control is a pinch gesture that writes to SpringBoard preferences, which is outside AirLift's write scope."
+    },
+    {
+      "id": "home.icon_swap",
+      "name": "Custom Home Screen icon artwork",
+      "category": "Home Screen",
+      "description": "Replace the icon image an app shows on the Home Screen.",
+      "icon": "▣",
+      "tags": [
+        "home screen",
+        "icon",
+        "artwork",
+        "image"
+      ],
+      "backend": "unsupported",
+      "risk": "medium",
+      "effect": "respring",
+      "unsupported_reason": "SpringBoard renders icons from the app bundle's Assets.car and caches a flattened rendition. Replacing it means writing inside a signed app bundle and invalidating SpringBoard's icon cache; AirLift can write to neither the bundle nor the cache location because the container UUID is undiscoverable. Listed as PARTIAL upstream because the cache path is sometimes known, but not confirmed on 24A437."
+    },
+    {
+      "id": "home.monochrome_icons",
+      "name": "Monochrome / inverted icon themes",
+      "category": "Home Screen",
+      "description": "Apply a grayscale, inverted or tinted icon look across the Home Screen.",
+      "icon": "◑",
+      "tags": [
+        "home screen",
+        "icon",
+        "monochrome",
+        "invert",
+        "theme"
+      ],
+      "backend": "unsupported",
+      "risk": "medium",
+      "effect": "respring",
+      "unsupported_reason": "iOS 27 already offers Home Screen icon appearance (Tinted / Clear / Dark) natively in Settings. There is no writable preference for anything beyond it, so this needs no AirLift mechanism — the user just uses the system setting."
+    },
+    {
+      "id": "home.dock_background",
+      "name": "Transparent dock / folder glass",
+      "category": "Home Screen",
+      "description": "Change the dock and folder background material.",
+      "icon": "▩",
+      "tags": [
+        "home screen",
+        "dock",
+        "folder",
+        "glass",
+        "blur"
+      ],
+      "backend": "unsupported",
+      "risk": "high",
+      "effect": "respring",
+      "unsupported_reason": "Dock and folder material rendering is SpringBoard's own compositor output on iOS 27. Styling it requires SpringBoard code hooks, which is jailbreak-tier and not something AirLift's file-write path can reach."
+    },
+    {
+      "id": "home.hide_app_library",
+      "name": "Hide the App Library tab",
+      "category": "App Library",
+      "description": "Remove the App Library page from the Home Screen.",
+      "icon": "▦",
+      "tags": [
+        "app library",
+        "hide",
+        "home screen"
+      ],
+      "backend": "unsupported",
+      "risk": "low",
+      "effect": "respring",
+      "unsupported_reason": "The App Library tab is part of the Home Screen layout decided in SpringBoard preferences; not writable through AirLift."
+    },
+    {
+      "id": "appicon.pack",
+      "name": "Icon packs / alternate icon sets",
+      "category": "App Icons",
+      "description": "Install a themed set of alternative app icons.",
+      "icon": "⬢",
+      "tags": [
+        "icons",
+        "pack",
+        "alternative",
+        "theme",
+        "anime"
+      ],
+      "backend": "unsupported",
+      "risk": "low",
+      "effect": "none",
+      "unsupported_reason": "iOS only accepts alternative icons that ship inside the app itself (CFBundleAlternateIcons). AirCard cannot add icons to a bundle it cannot rewrite, and iOS exposes no API for third-party icon packs. Documented as not possible rather than approximated."
+    },
+    {
+      "id": "lock.hide_clock",
+      "name": "Hide or restyle the lock screen clock",
+      "category": "Lock Screen",
+      "description": "Remove the lock screen clock, or change its font, size, colour, position or glow.",
+      "icon": "◷",
+      "tags": [
+        "lock screen",
+        "clock",
+        "font",
+        "hide",
+        "position"
+      ],
+      "backend": "unsupported",
+      "risk": "medium",
+      "effect": "reboot",
+      "unsupported_reason": "Lock screen clock typography and position are rendered by SpringBoard from its own resources and the user's text-size setting. No writable store exposes font, point size or offset, and the footnote layout path (/var/containers) is not writable either. Measured and documented in docs/DEVICE-TEST-REPORT.md."
+    },
+    {
+      "id": "lock.hide_widgets",
+      "name": "Hide lock screen widgets",
+      "category": "Lock Screen",
+      "description": "Remove the widget row from the lock screen.",
+      "icon": "▢",
+      "tags": [
+        "lock screen",
+        "widget",
+        "hide"
+      ],
+      "backend": "unsupported",
+      "risk": "low",
+      "effect": "respring",
+      "unsupported_reason": "Widget presence on the lock screen is stored in Chrono / SpringBoard state, not in a file AirLift can write."
+    },
+    {
+      "id": "lock.hide_shortcuts",
+      "name": "Hide the flashlight and camera shortcuts",
+      "category": "Lock Screen",
+      "description": "Remove the corner buttons on the lock screen.",
+      "icon": "◐",
+      "tags": [
+        "lock screen",
+        "flashlight",
+        "camera",
+        "hide",
+        "shortcut"
+      ],
+      "backend": "unsupported",
+      "risk": "low",
+      "effect": "respring",
+      "unsupported_reason": "These controls are part of the SpringBoard lock screen layout; no writable preference toggles them."
+    },
+    {
+      "id": "lock.wallpaper_effects",
+      "name": "Lock Screen depth / blur effects",
+      "category": "Lock Screen",
+      "description": "Tune the wallpaper blur and depth effect behind the lock screen clock.",
+      "icon": "◍",
+      "tags": [
+        "lock screen",
+        "blur",
+        "depth",
+        "wallpaper",
+        "effect"
+      ],
+      "backend": "unsupported",
+      "risk": "medium",
+      "effect": "respring",
+      "unsupported_reason": "The depth effect is decided per-wallpaper by VisionKit and the wallpaper's own metadata. AirLift can deliver a wallpaper file but cannot ask iOS to apply a different effect strength, and there is no writable key for the blur radius."
+    },
+    {
+      "id": "lock.notification_style",
+      "name": "Notification appearance (glass, transparency, grouping)",
+      "category": "Notifications",
+      "description": "Restyle how notifications look: transparency, blur, corner radius, grouping, previews.",
+      "icon": "▤",
+      "tags": [
+        "notification",
+        "glass",
+        "blur",
+        "radius",
+        "transparency",
+        "group"
+      ],
+      "backend": "unsupported",
+      "risk": "high",
+      "effect": "respring",
+      "unsupported_reason": "Notification presentation on iOS 27 is drawn by the system in a separate process (usernotificationsd) using Liquid Glass system materials. There is no user-writable file for notification appearance, and altering the system itself would break the OS signature — not something AirLift can do, and not something to fake."
+    },
+    {
+      "id": "lock.sound_theme",
+      "name": "Lock / unlock / charging sound packs",
+      "category": "Sounds",
+      "description": "Replace the lock, unlock, charging and startup sounds.",
+      "icon": "♪",
+      "tags": [
+        "sound",
+        "lock",
+        "unlock",
+        "charging",
+        "pack",
+        "audio"
+      ],
+      "backend": "unsupported",
+      "risk": "high",
+      "effect": "reboot",
+      "unsupported_reason": "System UI sounds live inside signed system audio bundles under /System/Library/Audio/UIPresses. AirLift can write into the media domain but cannot modify signed system bundles, and Apple exposes no supported channel for user-installed lock sounds. Only user-selectable ringtones/alerts are legitimate, and those are set through the Settings app rather than a file."
+    },
+    {
+      "id": "system.animation_speed",
+      "name": "Animation speed / reduce motion scaling",
+      "category": "Animations",
+      "description": "Speed up, slow down or restyle system animations.",
+      "icon": "◴",
+      "tags": [
+        "animation",
+        "speed",
+        "motion",
+        "spring",
+        "transition"
+      ],
+      "backend": "unsupported",
+      "risk": "high",
+      "effect": "respring",
+      "unsupported_reason": "UIKit and SpringBoard animation timing is compiled into the frameworks. The only legitimate control is the system Reduce Motion setting, which is exposed in Settings and is not writable from AirLift."
+    },
+    {
+      "id": "system.haptics",
+      "name": "Custom haptics and keyboard haptics",
+      "category": "Haptics",
+      "description": "Change the strength, style or enable/disable system haptics.",
+      "icon": "≈",
+      "tags": [
+        "haptic",
+        "keyboard",
+        "taptic",
+        "intensity",
+        "vibration"
+      ],
+      "backend": "unsupported",
+      "risk": "medium",
+      "effect": "respring",
+      "unsupported_reason": "Haptic behaviour is driven by the Taptic Engine through UIKit feedback generators and the system's per-event settings. There is no writable preference to override it; the only user control is the system Sound & Haptics settings."
+    },
+    {
+      "id": "system.keyboard_theme",
+      "name": "System keyboard theme and key colours",
+      "category": "Keyboard",
+      "description": "Restyle the system keyboard: key colour, transparency, blur, glow, sound.",
+      "icon": "⌨",
+      "tags": [
+        "keyboard",
+        "theme",
+        "key",
+        "color",
+        "blur",
+        "sound"
+      ],
+      "backend": "unsupported",
+      "risk": "high",
+      "effect": "respring",
+      "unsupported_reason": "The system keyboard is a locked-down UIInputViewController shipped inside the OS. Apple explicitly permits only full third-party keyboards (which replace it entirely and lose system features) or a stock look. The legitimate path is a custom keyboard extension, which AirCard documents as the alternative rather than pretending to restyle the system one."
+    },
+    {
+      "id": "system.liquid_glass",
+      "name": "Liquid Glass parameter tuning",
+      "category": "Liquid Glass",
+      "description": "Change the blur radius, opacity, refraction, tint and glow of the system glass materials.",
+      "icon": "◇",
+      "tags": [
+        "liquid glass",
+        "blur",
+        "opacity",
+        "refraction",
+        "tint",
+        "glass"
+      ],
+      "backend": "unsupported",
+      "risk": "high",
+      "effect": "reboot",
+      "unsupported_reason": "The material parameters on iOS 27 are read from Managed Preferences, which lives in the system's managed-configuration store. That store is not inside AirLift's write scope, and it is the same blocker recorded for every other Managed-Preferences-dependent tweak in this library."
+    },
+    {
+      "id": "system.control_center",
+      "name": "Control Center restyle and layout",
+      "category": "Control Center",
+      "description": "Hide, reorder or restyle Control Center toggles and modules.",
+      "icon": "⊞",
+      "tags": [
+        "control center",
+        "layout",
+        "toggle",
+        "restyle",
+        "module"
+      ],
+      "backend": "unsupported",
+      "risk": "high",
+      "effect": "respring",
+      "unsupported_reason": "Control Center layout lives in ControlCenterUI preferences with no AirLift-writable path, and the visual style is a system material. Appearance customisation beyond the built-in Dark/Light and accessibility contrast options is not exposed to any third-party app."
+    },
+    {
+      "id": "system.charging_screen",
+      "name": "Charging screen and boot animation",
+      "category": "Charging",
+      "description": "Custom charging animation, charging wallpaper and battery glow.",
+      "icon": "⚡",
+      "tags": [
+        "charging",
+        "animation",
+        "wallpaper",
+        "battery",
+        "glow",
+        "boot"
+      ],
+      "backend": "unsupported",
+      "risk": "high",
+      "effect": "reboot",
+      "unsupported_reason": "The charging and boot UI is drawn early in boot by a signed system component. Replacing it means overwriting OS assets, which is not reversible through AirLift and is refused rather than attempted."
+    },
+    {
+      "id": "system.battery_style",
+      "name": "Battery icon, colours and low-power appearance",
+      "category": "Battery",
+      "description": "Restyle the battery icon, colours, animation and low-battery warning.",
+      "icon": "▮",
+      "tags": [
+        "battery",
+        "icon",
+        "color",
+        "animation",
+        "low power",
+        "widget"
+      ],
+      "backend": "unsupported",
+      "risk": "medium",
+      "effect": "respring",
+      "unsupported_reason": "Battery presentation is computed by SystemStatusUI from system status with no writable override. The only user-facing control is the system Battery settings and the optional charging widget, which iOS already provides."
+    },
+    {
+      "id": "system.preferences_write",
+      "name": "Write system preferences (FeatureFlags, Managed Preferences, MobileGestalt)",
+      "category": "Developer",
+      "description": "Change system-wide behaviour by writing /var/preferences, FeatureFlags or MobileGestalt.",
+      "icon": "⚙",
+      "tags": [
+        "developer",
+        "preferences",
+        "feature flags",
+        "managed",
+        "gestalt",
+        "jailbreak"
+      ],
+      "backend": "unsupported",
+      "risk": "high",
+      "effect": "reboot",
+      "unsupported_reason": "These stores are protected by TCC and by the OS signature. AirLift's write primitive can only land files in the media and cache domains; verified on device that /var/preferences and /var/db are rejected. A large number of classic tweaks depend on this, which is why so much of this library is honestly marked unsupported."
+    },
+    {
+      "id": "system.springboard_hooks",
+      "name": "SpringBoard code hooks / respring injection",
+      "category": "Developer",
+      "description": "Load an injected dynamic library into SpringBoard to change UI behaviour at runtime.",
+      "icon": "⧉",
+      "tags": [
+        "developer",
+        "hook",
+        "injection",
+        "dylib",
+        "springboard",
+        "respring"
+      ],
+      "backend": "unsupported",
+      "risk": "high",
+      "effect": "reboot",
+      "unsupported_reason": "Injecting code into a signed system process requires a jailbreak-style substrate or the Dynamic Store code-signing bypass. AirCard is an AirLift-based app with no code-injection capability, and pretending otherwise would be a lie with a bootloop at the end of it."
+    },
+    {
+      "id": "system.respring",
+      "name": "Respring (SpringBoard restart)",
+      "category": "SpringBoard",
+      "description": "Refresh SpringBoard so appearance changes take effect.",
+      "icon": "↻",
+      "tags": [
+        "springboard",
+        "respring",
+        "restart",
+        "refresh"
+      ],
+      "backend": "unsupported",
+      "risk": "medium",
+      "effect": "reboot",
+      "unsupported_reason": "A real respring needs to kill and relaunch SpringBoard inside the system. An app cannot do this to another process without a privileged helper; the engine can only report that a change needs a reboot, and the user reboots. Toggling this from the UI is not offered for that reason."
+    },
+    {
+      "id": "system.safari_startpage",
+      "name": "Custom Safari start page and wallpapers",
+      "category": "Safari",
+      "description": "Replace the Safari start page with a custom page or wallpaper.",
+      "icon": "◎",
+      "tags": [
+        "safari",
+        "start page",
+        "wallpaper",
+        "theme",
+        "custom"
+      ],
+      "backend": "unsupported",
+      "risk": "low",
+      "effect": "none",
+      "unsupported_reason": "The Safari start page is chosen in Safari's own settings and stored in its container. iOS provides no API for a third-party app to set it; the legitimate alternative AirCard implements is sharing an image to a Safari extension or opening a user-hosted page."
+    },
+    {
+      "id": "photos.ai_analysis",
+      "name": "Photo analysis, palette extraction, wallpaper conversion",
+      "category": "Photos",
+      "description": "Analyse a photo, extract its palette, and turn it into a wallpaper or theme asset.",
+      "icon": "◐",
+      "tags": [
+        "photos",
+        "analysis",
+        "palette",
+        "wallpaper",
+        "theme",
+        "convert"
+      ],
+      "backend": "native_ios",
+      "risk": "low",
+      "effect": "none",
+      "requires_backup": false,
+      "min_ios": "15.0",
+      "paths": [],
+      "rollback": "Nothing on the device; this only produces local files.",
+      "unsupported_reason": "Palette and header analysis is implemented locally (core-engine/src/packs.rs inspect_image / PNG PLTE extraction) and verified against generated PNGs. Converting a photo INTO a wallpaper needs an app-side pipeline.",
+      "page": "Themes",
+      "impl_id": "Windows.Packs (local files only)",
+      "verified_builds": []
+    },
+    {
+      "id": "photos.metadata_tools",
+      "name": "Image metadata and batch tools",
+      "category": "Photos",
+      "description": "Read dimensions, orientation and format, and report oversized wallpaper assets.",
+      "icon": "▤",
+      "tags": [
+        "photos",
+        "metadata",
+        "dimensions",
+        "batch",
+        "storage"
+      ],
+      "backend": "native_ios",
+      "risk": "low",
+      "effect": "none",
+      "requires_backup": false,
+      "min_ios": "15.0",
+      "paths": [],
+      "rollback": "Read-only.",
+      "unsupported_reason": "Implemented locally as read-only PNG/JPEG/GIF/BMP/WebP header inspection in the Windows GUI. It writes nothing to the device.",
+      "page": "Themes",
+      "impl_id": "Windows.Packs (local files only)",
+      "verified_builds": []
+    },
+    {
+      "id": "wallpaper.analyzer",
+      "name": "Wallpaper library and header analysis",
+      "category": "Wallpapers",
+      "description": "Scan a folder of wallpapers and report the real format, pixel size, orientation and embedded palette.",
+      "icon": "▦",
+      "tags": [
+        "wallpaper",
+        "library",
+        "scan",
+        "metadata",
+        "palette",
+        "orientation"
+      ],
+      "backend": "theme",
+      "risk": "low",
+      "effect": "preview_only",
+      "requires_backup": false,
+      "paths": [],
+      "rollback": "Read-only.",
+      "unsupported_reason": "IMPLEMENTED AND TESTED on this machine: core-engine/src/packs.rs scan_wallpapers / search_wallpapers / inspect_image read real file headers and report format, dimensions, orientation and palette. Nothing is written to the phone.",
+      "page": "Themes",
+      "impl_id": "Windows.Packs (local files only)",
+      "verified_builds": []
+    },
+    {
+      "id": "pack.aircardpack",
+      "name": "Theme packs (.aircardpack import / export)",
+      "category": "Themes",
+      "description": "Import and export validated .aircardpack bundles holding themes, wallpapers, keypad art and wallet artwork.",
+      "icon": "⬓",
+      "tags": [
+        "pack",
+        "import",
+        "export",
+        "aircardpack",
+        "bundle",
+        "theme"
+      ],
+      "backend": "theme",
+      "risk": "low",
+      "effect": "preview_only",
+      "requires_backup": false,
+      "paths": [],
+      "rollback": "Packs are local files; deleting one removes nothing from the device.",
+      "unsupported_reason": "IMPLEMENTED AND TESTED on this machine: core-engine/src/packs.rs build_pack / read_pack validate bundles (sha256 + size + declared-asset checks, traversal rejection, entry and size caps). Round-tripped on a real pack in examples/pack_report.rs. Packs are local files and touch nothing on the device.",
+      "page": "Themes",
+      "impl_id": "Windows.Packs (local files only)",
+      "verified_builds": []
+    },
+    {
+      "id": "theme.one_tap",
+      "name": "One-tap complete theme",
+      "category": "Themes",
+      "description": "Apply every supported component of a preset (passcode, wallpaper, wallet art, status bar) in one verified batch.",
+      "icon": "★",
+      "tags": [
+        "theme",
+        "preset",
+        "one tap",
+        "apply all",
+        "batch"
+      ],
+      "backend": "air_lift",
+      "risk": "medium",
+      "effect": "reboot",
+      "requires_backup": true,
+      "min_ios": "16.0",
+      "paths": [
+        "/var/mobile/Library/Caches/TelephonyUI-10",
+        "/var/mobile/Library/SpringBoard/StatusBarOverrides.archive"
+      ],
+      "rollback": "Each component is backed up separately and can be rolled back on its own; the engine refuses to apply the batch if any single component fails verification.",
+      "unsupported_reason": "A one-tap theme would compose several device writes. Only the components with a verified write path can run (passcode theme, status bar carrier, PosterBoard wallpaper); the rest are unsupported, so a single button would silently no-op.",
+      "page": "Themes",
+      "verified_builds": []
+    },
+    {
+      "id": "system.accessibility_filters",
+      "name": "Accessibility colour filters and contrast",
+      "category": "Accessibility",
+      "description": "Greyscale, colour filters, increased contrast and reduce transparency.",
+      "icon": "◐",
+      "tags": [
+        "accessibility",
+        "contrast",
+        "grayscale",
+        "tint",
+        "transparency",
+        "vision"
+      ],
+      "backend": "unsupported",
+      "risk": "low",
+      "effect": "none",
+      "unsupported_reason": "These are Accessibility settings owned by the system. iOS exposes them to users and to assistive apps only, not for third-party programmatic change — and they should not be set behind someone's back. The UI links to Settings instead of pretending to toggle them."
+    }
+  ]
+}

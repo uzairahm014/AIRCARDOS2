@@ -1,0 +1,346 @@
+{
+  "category": "Home Screen, SpringBoard and system",
+  "tweaks": [
+    {
+      "id": "springboard.hide_search",
+      "name": "Hide the Home Screen search button",
+      "category": "Home Screen",
+      "description": "Remove the Search pill from the bottom of the Home Screen.",
+      "icon": "⌕",
+      "tags": [
+        "home screen",
+        "search",
+        "spotlight",
+        "hide",
+        "pill"
+      ],
+      "backend": "unsupported",
+      "risk": "low",
+      "effect": "respring",
+      "unsupported_reason": "Spotlight's visibility flag lives in /var/preferences/FeatureFlags/Settings.plist (com.apple.springboard SBDontShowSearchButton), which is outside AirLift's write scope. Upstream has documented this exact block many times."
+    },
+    {
+      "id": "springboard.hide_page_dots",
+      "name": "Hide Home Screen page dots",
+      "category": "Home Screen",
+      "description": "Remove the page indicator dots from the bottom of the Home Screen.",
+      "icon": "⋯",
+      "tags": [
+        "home screen",
+        "pages",
+        "dots",
+        "hide"
+      ],
+      "backend": "unsupported",
+      "risk": "low",
+      "effect": "respring",
+      "unsupported_reason": "Same FeatureFlags gate as the search button; no writable copy of /var/preferences exists for a non-jailbreak host."
+    },
+    {
+      "id": "springboard.hide_dock",
+      "name": "Hide the dock",
+      "category": "Home Screen",
+      "description": "Remove the dock row from the bottom of the Home Screen.",
+      "icon": "▬",
+      "tags": [
+        "home screen",
+        "dock",
+        "hide"
+      ],
+      "backend": "unsupported",
+      "risk": "medium",
+      "effect": "respring",
+      "unsupported_reason": "Dock visibility is a SpringBoard runtime flag with no user-domain representation on iOS 27."
+    },
+    {
+      "id": "springboard.custom_labels",
+      "name": "Custom app labels and hiding labels",
+      "category": "Home Screen",
+      "description": "Rename or hide the text label under each Home Screen icon.",
+      "icon": "A",
+      "tags": [
+        "home screen",
+        "labels",
+        "rename",
+        "icons"
+      ],
+      "backend": "unsupported",
+      "risk": "medium",
+      "effect": "respring",
+      "unsupported_reason": "Icon labels come from each app's Info.plist inside its own bundle. Renaming them requires modifying signed app bundles, which iOS rejects, and there is no SpringBoard override file for label text on iOS 27."
+    },
+    {
+      "id": "springboard.icon_pack",
+      "name": "Icon theme pack",
+      "category": "Icons",
+      "description": "Replace Home Screen icon artwork across the whole system.",
+      "icon": "❖",
+      "tags": [
+        "icons",
+        "theme",
+        "pack",
+        "artwork",
+        "anime",
+        "cyberpunk"
+      ],
+      "backend": "unsupported",
+      "risk": "high",
+      "effect": "respring",
+      "unsupported_reason": "A real icon pack requires substituting CFBundleIcons inside signed application bundles. Even with a valid bundle AirLift would need to write inside each app's container while it is sealed, and iOS validates signatures at install. This needs a jailbreak or a re-signed install, neither of which this engine does."
+    },
+    {
+      "id": "springboard.icon_glow",
+      "name": "Icon glow and shadow effects",
+      "category": "Icons",
+      "description": "Add a glow, rim light or drop shadow to Home Screen icons.",
+      "icon": "✦",
+      "tags": [
+        "icons",
+        "glow",
+        "shadow",
+        "rim",
+        "effects"
+      ],
+      "backend": "unsupported",
+      "risk": "medium",
+      "effect": "respring",
+      "unsupported_reason": "Icon rendering is done by IconServices from bundle artwork; there is no per-icon effect configuration file a non-jailbreak host can write."
+    },
+    {
+      "id": "controlcenter.hide_controls",
+      "name": "Hide Control Center controls",
+      "category": "Control Center",
+      "description": "Remove or rearrange individual Control Center toggles.",
+      "icon": "◫",
+      "tags": [
+        "control center",
+        "hide",
+        "toggles",
+        "arrange"
+      ],
+      "backend": "unsupported",
+      "risk": "medium",
+      "effect": "respring",
+      "unsupported_reason": "Control Center layout is stored in the user's ControlCenter preferences, which live under /var/preferences — outside AirLift's write scope."
+    },
+    {
+      "id": "controlcenter.glass_theme",
+      "name": "Control Center glass theme",
+      "category": "Liquid Glass",
+      "description": "Restyle Control Center with custom blur, opacity and accent colours.",
+      "icon": "◇",
+      "tags": [
+        "control center",
+        "glass",
+        "liquid glass",
+        "blur",
+        "theme"
+      ],
+      "backend": "unsupported",
+      "risk": "medium",
+      "effect": "respring",
+      "unsupported_reason": "iOS 27's Liquid Glass appearance is computed by the system from its own style store; there is no user-facing file that overrides blur radius or tint."
+    },
+    {
+      "id": "liquiglass.system_theme",
+      "name": "Liquid Glass system theme",
+      "category": "Liquid Glass",
+      "description": "Force the Liquid Glass look with custom blur, refraction and glow across the system.",
+      "icon": "◇",
+      "tags": [
+        "liquid glass",
+        "blur",
+        "glow",
+        "tint",
+        "system"
+      ],
+      "backend": "unsupported",
+      "risk": "high",
+      "effect": "respring",
+      "unsupported_reason": "Solarium and Calistoga keys live in /var/Managed Preferences/mobile/.GlobalPreferences.plist, which is outside AirLift's scope. Glass can be applied inside AirCard's own UI, which is what the app theme does."
+    },
+    {
+      "id": "notifications.glass",
+      "name": "Glass notification style",
+      "category": "Notifications",
+      "description": "Make notification banners translucent, blurred and rounded.",
+      "icon": "▤",
+      "tags": [
+        "notifications",
+        "glass",
+        "blur",
+        "transparency",
+        "banner"
+      ],
+      "backend": "unsupported",
+      "risk": "medium",
+      "effect": "respring",
+      "unsupported_reason": "Banner material and corner radius are set by the system's notification presentation code with no writable override on iOS 27."
+    },
+    {
+      "id": "animations.speed",
+      "name": "Animation speed scaling",
+      "category": "Animations",
+      "description": "Slow down or speed up all system animations.",
+      "icon": "◴",
+      "tags": [
+        "animations",
+        "speed",
+        "spring",
+        "slow motion",
+        "fast"
+      ],
+      "backend": "unsupported",
+      "risk": "low",
+      "effect": "none",
+      "unsupported_reason": "iOS exposes animation speed only through the Accessibility Reduce Motion setting, which scales rather than sets a value and is not writable from outside the Accessibility store."
+    },
+    {
+      "id": "animations.launch",
+      "name": "Custom app launch animation",
+      "category": "Animations",
+      "description": "Replace the zoom / fade app-open transition.",
+      "icon": "◫",
+      "tags": [
+        "animations",
+        "launch",
+        "transition",
+        "zoom",
+        "fade"
+      ],
+      "backend": "unsupported",
+      "risk": "high",
+      "effect": "respring",
+      "unsupported_reason": "Launch transitions are driven by the system's rendering code; there is no file a non-jailbreak host can write to alter them."
+    },
+    {
+      "id": "sounds.system_theme",
+      "name": "System sound theme",
+      "category": "Sounds",
+      "description": "Replace lock, unlock, notification, keyboard and charging sounds.",
+      "icon": "♪",
+      "tags": [
+        "sounds",
+        "audio",
+        "lock",
+        "unlock",
+        "notification",
+        "pack"
+      ],
+      "backend": "unsupported",
+      "risk": "medium",
+      "effect": "respring",
+      "unsupported_reason": "System sounds are sealed in the read-only system volume at /System/Library/Audio, which AirLift cannot reach. Sound themes need to be installed by the jailbreak tweak ecosystem."
+    },
+    {
+      "id": "haptics.custom",
+      "name": "Custom haptic patterns",
+      "category": "Haptics",
+      "description": "Change the haptic feel of taps, keyboard and notifications.",
+      "icon": "≈",
+      "tags": [
+        "haptics",
+        "feedback",
+        "taptic",
+        "engine",
+        "keyboard"
+      ],
+      "backend": "unsupported",
+      "risk": "medium",
+      "effect": "respring",
+      "unsupported_reason": "Haptic patterns are compiled into UIKit and SpringBoard binaries; there is no runtime configuration surface."
+    },
+    {
+      "id": "keyboard.theme",
+      "name": "System keyboard theme",
+      "category": "Keyboard",
+      "description": "Recolour or restyle the stock iOS keyboard.",
+      "icon": "⌨",
+      "tags": [
+        "keyboard",
+        "theme",
+        "keys",
+        "color",
+        "cyberpunk"
+      ],
+      "backend": "unsupported",
+      "risk": "high",
+      "effect": "none",
+      "unsupported_reason": "The stock keyboard cannot be restyled by a third-party app. A custom keyboard app is a different keyboard, not a theme, and the user has to switch to it in Settings."
+    },
+    {
+      "id": "charging.animation",
+      "name": "Custom charging animation",
+      "category": "Charging",
+      "description": "Replace the charging bolt animation and show custom status.",
+      "icon": "⚡",
+      "tags": [
+        "charging",
+        "animation",
+        "battery",
+        "bolt"
+      ],
+      "backend": "unsupported",
+      "risk": "medium",
+      "effect": "respring",
+      "unsupported_reason": "The charging UI is rendered by system components with assets in the sealed system volume."
+    },
+    {
+      "id": "homescreen.springboard_flags",
+      "name": "SpringBoard behaviour flags",
+      "category": "SpringBoard",
+      "description": "SBDontLockAfterCrash, SBHideLowPowerAlerts, SBDontDimOrLockOnAC and friends.",
+      "icon": "◧",
+      "tags": [
+        "springboard",
+        "flags",
+        "managed preferences",
+        "behaviour"
+      ],
+      "backend": "unsupported",
+      "risk": "high",
+      "effect": "reboot",
+      "unsupported_reason": "These keys live in /var/Managed Preferences/mobile/com.apple.springboard.plist, outside AirLift's scope. Delivering them would need the mobilebackup2 restore pipeline, which this engine does not implement."
+    },
+    {
+      "id": "mobilegestalt.edit",
+      "name": "MobileGestalt edits",
+      "category": "Developer",
+      "description": "Change device name, model strings and other MobileGestalt values.",
+      "icon": "⌸",
+      "tags": [
+        "gestalt",
+        "device name",
+        "model",
+        "tcc"
+      ],
+      "backend": "unsupported",
+      "risk": "high",
+      "effect": "reboot",
+      "unsupported_reason": "TCC-protected on iOS 17 and later. The AirLift README states plainly that the escape does not work on the MobileGestalt plist, and that was confirmed again while testing on 24A437."
+    },
+    {
+      "id": "dynamicisland.software",
+      "name": "Dynamic Island-style AI surface",
+      "category": "Dynamic Island",
+      "description": "A pill-shaped AI status surface that expands with state, inside AirCard and via Live Activities.",
+      "icon": "◉",
+      "tags": [
+        "dynamic island",
+        "pill",
+        "ai",
+        "live activity",
+        "status"
+      ],
+      "backend": "live_activity",
+      "risk": "low",
+      "effect": "none",
+      "requires_backup": false,
+      "min_ios": "16.1",
+      "paths": [],
+      "rollback": "End the Live Activity; nothing on the device persists.",
+      "unsupported_reason": "A software 'Dynamic Island' can only be an overlay inside an app you own. It cannot be drawn over SpringBoard or other apps without code injection, which is not possible from a USB file-write tool.",
+      "verified_builds": []
+    }
+  ]
+}
