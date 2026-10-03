@@ -40,7 +40,7 @@
 	<string>AirCard-iOS needs photo access to apply custom card skins and passcode themes.</string>
 	<!-- On-device AI: speech recognition, TTS and Vision all run locally. -->
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>AirCard AI transcribes your voice using Apple&rsquo;s on-device speech recogniser. Audio never leaves this iPhone.</string>
+	<string>AirCard AI transcribes your voice using Apple's on-device speech recogniser. Audio never leaves this iPhone.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>AirCard AI can describe and read text in images you choose, using on-device Vision. Nothing is uploaded.</string>
 	<!-- Background: audio keeps the app alive while the user approves the PIN -->
