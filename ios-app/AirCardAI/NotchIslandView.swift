@@ -115,8 +115,8 @@ public final class NotchIslandState: Sendable {
 public struct NotchIsland<Overlay: View>: View {
     @Bindable var state: NotchIslandState
 
-    private let geo: NotchGeometry
-    @ViewBuilder private var overlay: () -> Overlay
+private let geo: NotchGeometry
+private let overlay: () -> Overlay
 
     public init(
         state: NotchIslandState,
