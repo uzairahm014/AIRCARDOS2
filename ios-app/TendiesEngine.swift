@@ -300,7 +300,12 @@ public final class TendiesEngine {
             log("  ✨ Found \(descriptors.count) descriptor(s) to install")
 
             for (descIndex, descItem) in descriptors.enumerated() {
-                let targetUUID = UUID().uuidString.uppercased()
+                // Reuse the UUID the archive itself shipped with. Minting a
+                // fresh one here detached the written folder from the
+                // identifiers inside the descriptor's own plists, so PosterBoard
+                // indexed a poster that pointed at a UUID that no longer existed.
+                // The archive's own name is the UUID PosterBoard expects.
+                let targetUUID = reuseArchiveUUIDIfPossible(descItem.url)
                 let randomizedID = Int.random(in: 10000...99999)
                 log("  [\(descIndex + 1)/\(descriptors.count)] Descriptor \(targetUUID) (ID: \(randomizedID)) for \(descItem.ext)…")
 
@@ -308,26 +313,33 @@ public final class TendiesEngine {
                 updatePlistIdentifiers(in: descItem.url, randomizedID: randomizedID)
 
                 for sVer in versionsToWrite {
-                    // Primary destination
-                    let targetParentDir = "\(normalizedContainer)/Library/Application Support/PRBPosterExtensionDataStore/\(sVer)/Extensions/\(descItem.ext)/descriptors"
-                    try await injectDescriptorFolder(
-                        folderURL: descItem.url,
-                        targetParentDir: targetParentDir,
-                        destName: targetUUID,
-                        pairingPath: pairingPath,
-                        log: log
-                    )
-
-                    // On iOS 18+, Collections was migrated to com.apple.Posters.CollectionsPosterApp
-                    if descItem.ext == "com.apple.WallpaperKit.CollectionsPoster" {
-                        let modernParentDir = "\(normalizedContainer)/Library/Application Support/PRBPosterExtensionDataStore/\(sVer)/Extensions/com.apple.Posters.CollectionsPosterApp/descriptors"
-                        try? await injectDescriptorFolder(
+                    // iOS 27 read path is `configurations/`; 17-26 used
+                    // `descriptors/`. Writing only the legacy folder lands files
+                    // PosterFoundation never looks at, which is exactly why the
+                    // wallpaper never appeared in Settings. Both are written.
+                    let extBase = "\(normalizedContainer)/Library/Application Support/PRBPosterExtensionDataStore/\(sVer)/Extensions/\(descItem.ext)"
+                    for parentDir in ["\(extBase)/configurations", "\(extBase)/descriptors"] {
+                        try await injectDescriptorFolder(
                             folderURL: descItem.url,
-                            targetParentDir: modernParentDir,
+                            targetParentDir: parentDir,
                             destName: targetUUID,
                             pairingPath: pairingPath,
                             log: log
                         )
+                    }
+
+                    // On iOS 18+, Collections was migrated to com.apple.Posters.CollectionsPosterApp
+                    if descItem.ext == "com.apple.WallpaperKit.CollectionsPoster" {
+                        let modernBase = "\(normalizedContainer)/Library/Application Support/PRBPosterExtensionDataStore/\(sVer)/Extensions/com.apple.Posters.CollectionsPosterApp"
+                        for parentDir in ["\(modernBase)/configurations", "\(modernBase)/descriptors"] {
+                            try? await injectDescriptorFolder(
+                                folderURL: descItem.url,
+                                targetParentDir: parentDir,
+                                destName: targetUUID,
+                                pairingPath: pairingPath,
+                                log: log
+                            )
+                        }
                     }
                 }
             }
@@ -474,6 +486,34 @@ public final class TendiesEngine {
                 )
             }
         }
+    }
+
+    // MARK: - Descriptor UUID
+
+    /// The UUID a descriptor folder should be installed under.
+    ///
+    /// PosterBoard descriptors are named after their contents, e.g.
+    /// `13250000-0000-0000-0000-000000000000`, and the identifiers stored inside
+    /// the descriptor's own plists refer to that same UUID. When AirLift minted a
+    /// new random UUID for the destination folder, the installed poster no
+    /// longer matched its own identifiers and PosterBoard dropped it silently.
+    /// So: if the archive's folder is already UUID-shaped, install under that
+    /// exact name. Only fall back to a fresh UUID when it is not.
+    private func reuseArchiveUUIDIfPossible(_ descriptorURL: URL) -> String {
+        let name = descriptorURL.lastPathComponent
+        if isUUIDShaped(name) { return name }
+        // The archive may nest the descriptor under a UUID-named parent.
+        if let parent = descriptorURL.deletingLastPathComponent().lastPathComponent,
+           isUUIDShaped(parent) {
+            return parent
+        }
+        return UUID().uuidString.uppercased()
+    }
+
+    private func isUUIDShaped(_ name: String) -> Bool {
+        let parts = name.split(separator: "-")
+        guard parts.count == 5 else { return false }
+        return name.allSatisfy { $0.isHexDigit || $0 == "-" }
     }
 
     // MARK: - Plist Identifier Randomization (Matches Nugget implementation)
