@@ -22,9 +22,14 @@ jobs:
 
       - name: Select Xcode
         run: |
-          ls /Applications | grep -i '^Xcode' || true
-          sudo xcode-select -s /Applications/Xcode_16.2.app
+          # Do NOT force a specific Xcode here. The hosted runner image ships a
+          # set of SDKs and simulator runtimes that match its *default* Xcode.
+          # Forcing an older one makes actool fail with:
+          #   "No simulator runtime version ... available to use with
+          #    iphonesimulator SDK version ..."
+          # which has nothing to do with the app and is not fixable from here.
           xcodebuild -version
+          xcrun simctl list runtimes 2>/dev/null | head -5 || true
 
       - name: Install XcodeGen
         run: brew install xcodegen
