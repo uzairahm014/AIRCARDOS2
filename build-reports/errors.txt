@@ -1,5 +1,2 @@
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:72:24: error: cannot convert value of type '(tool: any AITool, argument: String, result: AIToolResult)' to expected argument type '(tool: String, argument: String, result: AIToolResult)'
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:89:74: error: expression is 'async' but is not marked with 'await'
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:90:16: error: expression is 'async' but is not marked with 'await'
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/TweakLibraryView.swift:319:39: error: unknown attribute 'MainActor'
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/TweakLibraryView.swift:347:49: error: call to main actor-isolated instance method 'apply' in a synchronous nonisolated context
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/SpeechRuntime.swift:68:9: error: 'guard' body must not fall through, consider using a 'return' or 'throw' to exit the scope
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:168:35: error: a C function pointer cannot be formed from a closure that captures context
