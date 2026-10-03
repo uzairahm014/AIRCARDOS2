@@ -55,7 +55,9 @@ targets:
     platform: iOS
     sources:
       - path: ios-app/AirCardLiveActivity
-      - path: ios-app/AirCardAI/AILiveActivity.swift
+      # Shared with the app, but dependency-free so the extension does not have
+      # to compile the AI engines.
+      - path: ios-app/AirCardAI/AILiveActivityAttributes.swift
     settings:
       base:
         PRODUCT_NAME: AirCardLiveActivity
