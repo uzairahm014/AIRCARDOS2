@@ -1,2 +1,1 @@
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/SpeechRuntime.swift:68:9: error: 'guard' body must not fall through, consider using a 'return' or 'throw' to exit the scope
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:168:35: error: a C function pointer cannot be formed from a closure that captures context
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:72:9: error: static member 'logSink' cannot be used on instance of type 'AirCardSystemBridge'
