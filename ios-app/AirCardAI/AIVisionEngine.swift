@@ -135,18 +135,18 @@ public final class AIVisionEngine: Sendable {
     /// Average colour, for palette-style questions. Real pixels, not a guess.
     public func averageColour(_ image: UIImage) async -> (r: Int, g: Int, b: Int)? {
         guard let cg = image.cgImage else { return nil }
+        // Render the whole image into a single 1x1 pixel. CIContext does the
+        // averaging for us; reading a pixel out of the original bitmap would
+        // only give us whichever pixel we happened to ask for.
         var pixel = [UInt8](repeating: 0, count: 4)
         context.render(
-            CGImage,
+            cg,
             toBitmap: &pixel,
             rowBytes: 4,
             bounds: CGRect(x: 0, y: 0, width: 1, height: 1),
             format: .RGBA8,
             colorSpace: CGColorSpaceCreateDeviceRGB()
         )
-        guard let data = cg.dataProvider?.data, data.count >= 4 else { return nil }
-        // Sample the middle pixel rather than trusting a possibly-absent bitmap.
-        _ = data
         return (Int(pixel[0]), Int(pixel[1]), Int(pixel[2]))
     }
 
