@@ -1,1 +1,25 @@
-error: unable to read property list from file: /Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/Info.plist: The operation couldn’t be completed. (SWBUtil.PropertyListConversionError error 2.) (in target 'AirCard-iOS' from project 'AirCard-iOS')
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIChatView.swift:209:44: error: cannot assign to property: 'lastError' setter is inaccessible
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIChatView.swift:274:20: error: cannot assign to property: 'lastError' setter is inaccessible
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIChatView.swift:80:46: error: cannot assign to property: 'lastError' setter is inaccessible
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIOrbView.swift:138:48: error: type 'Double' has no member 'max'
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:133:29: error: cannot convert value of type 'String' to type 'NSExpression' in coercion
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:133:51: error: no exact matches in call to instance method 'value'
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:133:62: error: 'nil' requires a contextual type
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:133:73: error: 'nil' requires a contextual type
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:133:87: error: 'nil' requires a contextual type
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:72:24: error: cannot convert value of type '(any AITool, String, AIToolResult)' to expected argument type '(tool: String, argument: String, result: AIToolResult)'
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:89:74: error: expression is 'async' but is not marked with 'await'
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:90:16: error: expression is 'async' but is not marked with 'await'
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIVisionEngine.swift:143:13: error: cannot convert value of type 'CGImage' to expected argument type 'CIImage'
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:130:21: error: unterminated string literal
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:130:91: error: invalid escape sequence in literal
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:131:31: error: cannot find 'so' in scope
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:131:58: error: invalid character in source file
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:131:80: error: unterminated string literal
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:142:17: error: unterminated string literal
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:142:91: error: invalid escape sequence in literal
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:143:51: error: cannot find 'so' in scope
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:143:79: error: unterminated string literal
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:173:26: error: extra argument in call
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/TweakLibraryView.swift:347:45: error: call to main actor-isolated instance method 'apply' in a synchronous nonisolated context
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/TweakLibraryView.swift:348:47: error: cannot convert value of type 'ApplyResult' to expected argument type 'Bool'
