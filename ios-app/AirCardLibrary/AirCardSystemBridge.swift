@@ -69,7 +69,7 @@ public final class AirCardSystemBridge {
         // Route FFI log lines into the same stream the UI shows. The callback
         // itself cannot hold a reference (see bridgeLogCallback), so it reads
         // this sink instead.
-        logSink = { [weak self] line in
+        Self.logSink = { [weak self] line in
             self?.append("    \(line)")
         }
     }
