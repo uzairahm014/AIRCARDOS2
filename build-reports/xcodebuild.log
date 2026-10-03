@@ -54,8 +54,8 @@ ExecuteExternalTool /Applications/Xcode_16.4.app/Contents/Developer/usr/bin/acto
 
 ExecuteExternalTool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -x c -c /dev/null
 
-Build description signature: e436d023652001707f6b3cd7cad30790
-Build description path: /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/XCBuildData/e436d023652001707f6b3cd7cad30790.xcbuilddata
+Build description signature: 3f6f653918b491652158d8f94b22c3a7
+Build description path: /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/XCBuildData/3f6f653918b491652158d8f94b22c3a7.xcbuilddata
 ClangStatCache /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2/AirCard-iOS.xcodeproj
     /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -o /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache
@@ -68,13 +68,13 @@ CreateBuildDirectory /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2/AirCard-iOS.xcodeproj
     builtin-create-build-directory /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex
 
-WriteAuxiliaryFile /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS-74faad7885c54c850c95b888a16a27bb-VFS-iphoneos/all-product-headers.yaml
-    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2/AirCard-iOS.xcodeproj
-    write-file /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS-74faad7885c54c850c95b888a16a27bb-VFS-iphoneos/all-product-headers.yaml
-
 CreateBuildDirectory /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2/AirCard-iOS.xcodeproj
     builtin-create-build-directory /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos
+
+WriteAuxiliaryFile /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS-74faad7885c54c850c95b888a16a27bb-VFS-iphoneos/all-product-headers.yaml
+    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2/AirCard-iOS.xcodeproj
+    write-file /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS-74faad7885c54c850c95b888a16a27bb-VFS-iphoneos/all-product-headers.yaml
 
 CreateBuildDirectory /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2/AirCard-iOS.xcodeproj
@@ -144,14 +144,14 @@ MkDir /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     /bin/mkdir -p /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCardLiveActivity.appex
 
+WriteAuxiliaryFile /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/Objects-normal/arm64/AirCard-iOS_const_extract_protocols.json (in target 'AirCard-iOS' from project 'AirCard-iOS')
+    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
+    write-file /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/Objects-normal/arm64/AirCard-iOS_const_extract_protocols.json
+
 WriteAuxiliaryFile /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp (in target 'AirCard-iOS' from project 'AirCard-iOS')
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     write-file /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
 -target arm64-apple-ios18.0 '-std=gnu11' -fobjc-arc -fobjc-weak -fmodules -gmodules '-fmodules-cache-path=/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/ModuleCache.noindex' -fpascal-strings -Os -fno-common '-DNS_BLOCK_ASSERTIONS=1' '-DOBJC_OLD_DISPATCH_PROTOTYPES=0' -isysroot /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -g '-fvisibility=hidden' -iquote /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/AirCard-iOS-generated-files.hmap -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/AirCard-iOS-own-target-headers.hmap -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/AirCard-iOS-all-target-headers.hmap -iquote /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/AirCard-iOS-project-headers.hmap -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/include -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/DerivedSources-normal/arm64 -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/DerivedSources/arm64 -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/DerivedSources -F/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos -F.
-
-WriteAuxiliaryFile /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/Objects-normal/arm64/AirCard-iOS_const_extract_protocols.json (in target 'AirCard-iOS' from project 'AirCard-iOS')
-    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
-    write-file /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/Objects-normal/arm64/AirCard-iOS_const_extract_protocols.json
 
 WriteAuxiliaryFile /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/Objects-normal/arm64/AirCard-iOS.SwiftFileList (in target 'AirCard-iOS' from project 'AirCard-iOS')
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
@@ -382,25 +382,25 @@ SwiftDriver\ Compilation AirCardLiveActivity normal arm64 com.apple.xcode.tools.
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     builtin-Swift-Compilation -- /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name AirCardLiveActivity -O -whole-module-optimization -enforce-exclusivity\=checked @/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -target arm64-apple-ios18.0 -g -module-cache-path /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -application-extension -swift-version 5 -I /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos -F /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos -c -num-threads 3 -Xcc -ivfsstatcache -Xcc /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache -output-file-map /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/AirCardLiveActivity-generated-files.hmap -Xcc -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/AirCardLiveActivity-own-target-headers.hmap -Xcc -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/AirCardLiveActivity-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/AirCardLiveActivity-project-headers.hmap -Xcc -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity-Swift.h -working-directory /Users/runner/work/AIRCARDOS2/AIRCARDOS2 -no-emit-module-separately-wmo
 
-PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/os_availability_internal-9IS7VRLJI7X2X616TYLTQK54R.scan
-    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
-    builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/os_availability_internal-9IS7VRLJI7X2X616TYLTQK54R.scan
-
 PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stdarg-949FLX46701RM16KGWV2DRB8Z.scan
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stdarg-949FLX46701RM16KGWV2DRB8Z.scan
+
+PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/os_availability_internal-9IS7VRLJI7X2X616TYLTQK54R.scan
+    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
+    builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/os_availability_internal-9IS7VRLJI7X2X616TYLTQK54R.scan
 
 PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_iso646-D8E080QWB8DXTM4N74HKRKKK2.scan
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_iso646-D8E080QWB8DXTM4N74HKRKKK2.scan
 
-PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/os_availability-7A6C86REC3ZVUR9BU9XDS8MXV.scan
-    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
-    builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/os_availability-7A6C86REC3ZVUR9BU9XDS8MXV.scan
-
 PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/ptrauth-9X7ZGIULVKXUO97U7286U2JZM.scan
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/ptrauth-9X7ZGIULVKXUO97U7286U2JZM.scan
+
+PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/os_availability-7A6C86REC3ZVUR9BU9XDS8MXV.scan
+    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
+    builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/os_availability-7A6C86REC3ZVUR9BU9XDS8MXV.scan
 
 PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_fenv-489V7NRR1HRZMX65ZKUT5C0L4.scan
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
@@ -426,29 +426,29 @@ PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Buil
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stdbool-E8IADRKZ47EBBM6AYQZ30ENKI.scan
 
-PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/ptrcheck-F56U6WN9PPCRTV1C752Z0JP9J.scan
-    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
-    builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/ptrcheck-F56U6WN9PPCRTV1C752Z0JP9J.scan
-
 PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/AvailabilityMacros-8T4Y01M5B1FSF7CX9FCNYA2N1.scan
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/AvailabilityMacros-8T4Y01M5B1FSF7CX9FCNYA2N1.scan
+
+PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/ptrcheck-F56U6WN9PPCRTV1C752Z0JP9J.scan
+    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
+    builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/ptrcheck-F56U6WN9PPCRTV1C752Z0JP9J.scan
 
 PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/DarwinFoundation-1T1F3PSAD5PDW8Q2BGTI62GHB.scan
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/DarwinFoundation-1T1F3PSAD5PDW8Q2BGTI62GHB.scan
 
-PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/uuid-F2DUF8RLVAH0OZ5YYQX60ZCP0.scan
+PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_setjmp-BA2ID1NA32I7XEGLEDE85HZ82.scan
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
-    builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/uuid-F2DUF8RLVAH0OZ5YYQX60ZCP0.scan
+    builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_setjmp-BA2ID1NA32I7XEGLEDE85HZ82.scan
 
 PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_strings-4LZZJ5QW47RAO6HCTNHS06I29.scan
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_strings-4LZZJ5QW47RAO6HCTNHS06I29.scan
 
-PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_setjmp-BA2ID1NA32I7XEGLEDE85HZ82.scan
+PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/uuid-F2DUF8RLVAH0OZ5YYQX60ZCP0.scan
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
-    builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_setjmp-BA2ID1NA32I7XEGLEDE85HZ82.scan
+    builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/uuid-F2DUF8RLVAH0OZ5YYQX60ZCP0.scan
 
 PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_math-1G8GN81225LYJ7HD64V4HSTTC.scan
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
@@ -494,25 +494,25 @@ PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Buil
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_useconds_t-B77T5IK0672HFYY5QKBXWCMLV.scan
 
-PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_locale-3MPWNWZAP44HEY7VRN5CEXNDC.scan
-    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
-    builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_locale-3MPWNWZAP44HEY7VRN5CEXNDC.scan
-
 PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_ctype-3HOY8H8DLBBOP1BKLSVO9W9YZ.scan
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_ctype-3HOY8H8DLBBOP1BKLSVO9W9YZ.scan
+
+PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_locale-3MPWNWZAP44HEY7VRN5CEXNDC.scan
+    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
+    builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_locale-3MPWNWZAP44HEY7VRN5CEXNDC.scan
 
 PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stdatomic-BEIVEWG55TZ4SR89IIHOR0FFQ.scan
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stdatomic-BEIVEWG55TZ4SR89IIHOR0FFQ.scan
 
-PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/xlocale-1KZ4M6BHS48W01BHU1JLBGVJ0.scan
-    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
-    builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/xlocale-1KZ4M6BHS48W01BHU1JLBGVJ0.scan
-
 PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/__wctype-CTMX97KC4S7VVALP1VFYSHRSR.scan
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/__wctype-CTMX97KC4S7VVALP1VFYSHRSR.scan
+
+PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/xlocale-1KZ4M6BHS48W01BHU1JLBGVJ0.scan
+    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
+    builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/xlocale-1KZ4M6BHS48W01BHU1JLBGVJ0.scan
 
 PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_limits-F3N8PR2BE8TUHS7QM6BGJZBJ.scan
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
@@ -578,25 +578,25 @@ PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Buil
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_tgmath-2M6XEZ6S0IFF47V0QPKJRIF59.scan
 
-PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/gethostuuid-BBXC46R6W3BVQ8QKSNN6WGK4F.scan
-    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
-    builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/gethostuuid-BBXC46R6W3BVQ8QKSNN6WGK4F.scan
-
 PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_wait-BY4N6L2XOHFXETGCV7RWSQIJO.scan
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_wait-BY4N6L2XOHFXETGCV7RWSQIJO.scan
+
+PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/gethostuuid-BBXC46R6W3BVQ8QKSNN6WGK4F.scan
+    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
+    builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/gethostuuid-BBXC46R6W3BVQ8QKSNN6WGK4F.scan
 
 PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/pthread-33DH6BW5XG0QECMCLGAOBY2RI.scan
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/pthread-33DH6BW5XG0QECMCLGAOBY2RI.scan
 
-PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_select-1HA76RXEJ1I22VM6RVA9J2WJD.scan
-    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
-    builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_select-1HA76RXEJ1I22VM6RVA9J2WJD.scan
-
 PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_stdlib-8ZYC3A4ZPSF4UVTFZUUTR3G98.scan
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_stdlib-8ZYC3A4ZPSF4UVTFZUUTR3G98.scan
+
+PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_select-1HA76RXEJ1I22VM6RVA9J2WJD.scan
+    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
+    builtin-precompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_select-1HA76RXEJ1I22VM6RVA9J2WJD.scan
 
 PrecompileModule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules/_wchar-9XGO3ATG4D3QB3LXJ62LWX9YZ.scan
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
@@ -657,15 +657,15 @@ Ld /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Rel
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios18.0 -isysroot /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -Os -L/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos -L/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos -F/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos -F/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos -F. -filelist /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/Objects-normal/arm64/AirCard-iOS.LinkFileList -Xlinker -rpath -Xlinker @executable_path/Frameworks -dead_strip -Xlinker -object_path_lto -Xlinker /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/Objects-normal/arm64/AirCard-iOS_lto.o -Xlinker -dependency_info -Xlinker /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/Objects-normal/arm64/AirCard-iOS_dependency_info.dat -fobjc-arc -fobjc-link-runtime -L/Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/Objects-normal/arm64/AirCard_iOS.swiftmodule -lc++ -lairlift_ffi -o /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCard-iOS.app/AirCard-iOS
 
-GenerateDSYMFile /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCard-iOS.app.dSYM /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCard-iOS.app/AirCard-iOS (in target 'AirCard-iOS' from project 'AirCard-iOS')
-    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
-    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCard-iOS.app/AirCard-iOS -o /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCard-iOS.app.dSYM
-
 ExtractAppIntentsMetadata (in target 'AirCard-iOS' from project 'AirCard-iOS')
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name AirCard_iOS --sdk-root /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk --xcode-version 16F6 --platform-family iOS --deployment-target 18.0 --bundle-identifier com.mak5er.aircard --output /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCard-iOS.app --target-triple arm64-apple-ios18.0 --binary-file /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCard-iOS.app/AirCard-iOS --dependency-file /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/Objects-normal/arm64/AirCard-iOS_dependency_info.dat --stringsdata-file /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/Objects-normal/arm64/AirCard-iOS.SwiftFileList --metadata-file-list /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/AirCard-iOS.DependencyMetadataFileList --static-metadata-file-list /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/AirCard-iOS.DependencyStaticMetadataFileList --swift-const-vals-list /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/Objects-normal/arm64/AirCard-iOS.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
-2026-10-03 17:05:32.579 appintentsmetadataprocessor[9659:32625] Starting appintentsmetadataprocessor export
-2026-10-03 17:05:32.607 appintentsmetadataprocessor[9659:32625] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+2026-10-03 18:26:00.891 appintentsmetadataprocessor[12626:41019] Starting appintentsmetadataprocessor export
+2026-10-03 18:26:00.897 appintentsmetadataprocessor[12626:41019] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+GenerateDSYMFile /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCard-iOS.app.dSYM /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCard-iOS.app/AirCard-iOS (in target 'AirCard-iOS' from project 'AirCard-iOS')
+    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
+    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCard-iOS.app/AirCard-iOS -o /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCard-iOS.app.dSYM
 
 CopySwiftLibs /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCard-iOS.app (in target 'AirCard-iOS' from project 'AirCard-iOS')
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
@@ -675,8 +675,8 @@ Ignoring --strip-bitcode because --sign was not passed
 AppIntentsSSUTraining (in target 'AirCard-iOS' from project 'AirCard-iOS')
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsnltrainingprocessor --infoplist-path /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCard-iOS.app/Info.plist --temp-dir-path /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/ssu --bundle-id com.mak5er.aircard --product-path /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCard-iOS.app --extracted-metadata-path /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCard-iOS.app/Metadata.appintents --metadata-file-list /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/AirCard-iOS.DependencyMetadataFileList --archive-ssu-assets
-2026-10-03 17:05:32.874 appintentsnltrainingprocessor[9681:32679] Parsing options for appintentsnltrainingprocessor
-2026-10-03 17:05:32.877 appintentsnltrainingprocessor[9681:32679] No AppShortcuts found - Skipping.
+2026-10-03 18:26:01.066 appintentsnltrainingprocessor[12679:41127] Parsing options for appintentsnltrainingprocessor
+2026-10-03 18:26:01.068 appintentsnltrainingprocessor[12679:41127] No AppShortcuts found - Skipping.
 
 RegisterExecutionPolicyException /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCard-iOS.app (in target 'AirCard-iOS' from project 'AirCard-iOS')
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
@@ -701,13 +701,13 @@ SwiftDriver\ Compilation\ Requirements AirCardLiveActivity normal arm64 com.appl
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     builtin-Swift-Compilation-Requirements -- /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name AirCardLiveActivity -O -whole-module-optimization -enforce-exclusivity\=checked @/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -target arm64-apple-ios18.0 -g -module-cache-path /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -application-extension -swift-version 5 -I /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos -F /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos -c -num-threads 3 -Xcc -ivfsstatcache -Xcc /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache -output-file-map /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/AirCardLiveActivity-generated-files.hmap -Xcc -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/AirCardLiveActivity-own-target-headers.hmap -Xcc -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/AirCardLiveActivity-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/AirCardLiveActivity-project-headers.hmap -Xcc -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity-Swift.h -working-directory /Users/runner/work/AIRCARDOS2/AIRCARDOS2 -no-emit-module-separately-wmo
 
-Copy /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCardLiveActivity.swiftmodule/arm64-apple-ios.swiftmodule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity.swiftmodule (in target 'AirCardLiveActivity' from project 'AirCard-iOS')
-    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity.swiftmodule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCardLiveActivity.swiftmodule/arm64-apple-ios.swiftmodule
-
 SwiftMergeGeneratedHeaders /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/DerivedSources/AirCardLiveActivity-Swift.h /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity-Swift.h (in target 'AirCardLiveActivity' from project 'AirCard-iOS')
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     builtin-swiftHeaderTool -arch arm64 /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity-Swift.h -o /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/DerivedSources/AirCardLiveActivity-Swift.h
+
+Copy /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCardLiveActivity.swiftmodule/arm64-apple-ios.swiftmodule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity.swiftmodule (in target 'AirCardLiveActivity' from project 'AirCard-iOS')
+    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity.swiftmodule /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCardLiveActivity.swiftmodule/arm64-apple-ios.swiftmodule
 
 Copy /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCardLiveActivity.swiftmodule/arm64-apple-ios.swiftdoc /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity.swiftdoc (in target 'AirCardLiveActivity' from project 'AirCard-iOS')
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
@@ -725,21 +725,21 @@ Ld /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Rel
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios18.0 -isysroot /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -Os -L/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos -L/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos -F/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos -F/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos -filelist /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity.LinkFileList -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -rpath -Xlinker @executable_path/../../Frameworks -dead_strip -Xlinker -object_path_lto -Xlinker /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity_lto.o -Xlinker -dependency_info -Xlinker /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity_dependency_info.dat -e _NSExtensionMain -fapplication-extension -fobjc-link-runtime -L/Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity.swiftmodule -o /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCardLiveActivity.appex/AirCardLiveActivity
 
+ExtractAppIntentsMetadata (in target 'AirCardLiveActivity' from project 'AirCard-iOS')
+    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
+    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name AirCardLiveActivity --sdk-root /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk --xcode-version 16F6 --platform-family iOS --deployment-target 18.0 --bundle-identifier com.mak5er.aircard.liveactivity --output /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCardLiveActivity.appex --target-triple arm64-apple-ios18.0 --binary-file /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCardLiveActivity.appex/AirCardLiveActivity --dependency-file /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity_dependency_info.dat --stringsdata-file /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity.SwiftFileList --metadata-file-list /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/AirCardLiveActivity.DependencyMetadataFileList --static-metadata-file-list /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/AirCardLiveActivity.DependencyStaticMetadataFileList --swift-const-vals-list /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-10-03 18:26:03.561 appintentsmetadataprocessor[12886:41637] Starting appintentsmetadataprocessor export
+2026-10-03 18:26:03.615 appintentsmetadataprocessor[12886:41637] Extracted no relevant App Intents symbols, skipping writing output
+
 GenerateDSYMFile /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCardLiveActivity.appex.dSYM /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCardLiveActivity.appex/AirCardLiveActivity (in target 'AirCardLiveActivity' from project 'AirCard-iOS')
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCardLiveActivity.appex/AirCardLiveActivity -o /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCardLiveActivity.appex.dSYM
 
-ExtractAppIntentsMetadata (in target 'AirCardLiveActivity' from project 'AirCard-iOS')
-    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
-    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name AirCardLiveActivity --sdk-root /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk --xcode-version 16F6 --platform-family iOS --deployment-target 18.0 --bundle-identifier com.mak5er.aircard.liveactivity --output /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCardLiveActivity.appex --target-triple arm64-apple-ios18.0 --binary-file /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCardLiveActivity.appex/AirCardLiveActivity --dependency-file /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity_dependency_info.dat --stringsdata-file /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity.SwiftFileList --metadata-file-list /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/AirCardLiveActivity.DependencyMetadataFileList --static-metadata-file-list /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/AirCardLiveActivity.DependencyStaticMetadataFileList --swift-const-vals-list /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/Objects-normal/arm64/AirCardLiveActivity.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
-2026-10-03 17:05:37.258 appintentsmetadataprocessor[10137:33725] Starting appintentsmetadataprocessor export
-2026-10-03 17:05:37.344 appintentsmetadataprocessor[10137:33725] Extracted no relevant App Intents symbols, skipping writing output
-
 AppIntentsSSUTraining (in target 'AirCardLiveActivity' from project 'AirCard-iOS')
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsnltrainingprocessor --infoplist-path /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCardLiveActivity.appex/Info.plist --temp-dir-path /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/ssu --bundle-id com.mak5er.aircard.liveactivity --product-path /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCardLiveActivity.appex --extracted-metadata-path /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCardLiveActivity.appex/Metadata.appintents --metadata-file-list /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCardLiveActivity.build/AirCardLiveActivity.DependencyMetadataFileList --archive-ssu-assets
-2026-10-03 17:05:37.369 appintentsnltrainingprocessor[10144:33751] Parsing options for appintentsnltrainingprocessor
-2026-10-03 17:05:37.370 appintentsnltrainingprocessor[10144:33751] No AppShortcuts found - Skipping.
+2026-10-03 18:26:03.632 appintentsnltrainingprocessor[12888:41645] Parsing options for appintentsnltrainingprocessor
+2026-10-03 18:26:03.633 appintentsnltrainingprocessor[12888:41645] No AppShortcuts found - Skipping.
 
 RegisterExecutionPolicyException /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCardLiveActivity.appex (in target 'AirCardLiveActivity' from project 'AirCard-iOS')
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
