@@ -1,0 +1,2 @@
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardApp.swift:4:1: error: 'main' attribute can only apply to one type in a module
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLiveActivity/AirCardLiveActivityWidget.swift:133:1: error: 'main' attribute can only apply to one type in a module
