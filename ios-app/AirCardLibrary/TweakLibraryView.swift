@@ -316,7 +316,8 @@ struct Confirmation: Identifiable {
 // MARK: - View model
 
 @available(iOS 17.0, *)
-public final class TweakLibraryModel: @MainActor ObservableObject {
+@MainActor
+public final class TweakLibraryModel: ObservableObject {
     @Published public var library: TweakLibrary
     @Published public var filter = LibraryFilter()
     /// Off by default: AirCard never reboots a phone without explicit consent.

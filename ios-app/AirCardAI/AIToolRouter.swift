@@ -62,14 +62,14 @@ public final class AIToolRouter: Sendable {
     }
 
     @discardableResult
-    public func run(tool: String, argument: String) async -> AIToolResult {
-        guard let tool = find(tool) else {
-            let result = AIToolResult(tool: tool, ok: false, summary: "No tool named \(tool).")
-            history.append((tool: tool, argument: argument, result: result))
+    public func run(tool name: String, argument: String) async -> AIToolResult {
+        guard let tool = find(name) else {
+            let result = AIToolResult(tool: name, ok: false, summary: "No tool named \(name).")
+            history.append((tool: name, argument: argument, result: result))
             return result
         }
         let result = await tool.run(argument: argument)
-        history.append((tool: tool, argument: argument, result: result))
+        history.append((tool: name, argument: argument, result: result))
         return result
     }
 }
@@ -83,9 +83,10 @@ public struct DeviceInfoTool: AITool {
     public var description: String { "Reports this iPhone's model, iOS version and AI capability status." }
     public var usageHint: String { "use when the user asks what device this is or what the AI can do" }
 
+    @MainActor
     public func run(argument: String) async -> AIToolResult {
-        let device = await MainActor.run { UIDevice.current }
-        let report = await AICapabilityReport()
+        let device = UIDevice.current
+        let report = AICapabilityReport()
         let summary = "\(device.model) on iOS \(device.systemVersion). \(report.summary)"
         return AIToolResult(tool: name, ok: true, summary: summary, detail: report.reasons.map { "\($0.key.rawValue): \($0.value.explanation)" }.joined(separator: "; "))
     }
