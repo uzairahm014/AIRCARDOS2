@@ -11,11 +11,14 @@ jobs:
     # build cannot run on Windows.
     runs-on: macos-15
     timeout-minutes: 45
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
         with:
           lfs: false
+          persist-credentials: true
 
       - name: Select Xcode
         run: |
