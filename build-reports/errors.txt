@@ -1,7 +1,0 @@
-@__swiftmacro_19AirCardLiveActivity06AILiveD11CoordinatorC12currentPhase33_FD042ACC358446A6EA995BFDE2646C5CLL18ObservationTrackedfMa_.swift:21:16: error: type of expression is ambiguous without a type annotation
-@__swiftmacro_19AirCardLiveActivity06AILiveD11CoordinatorC12currentPhase33_FD042ACC358446A6EA995BFDE2646C5CLL18ObservationTrackedfMp_.swift:1:49: error: cannot find type 'OrbPhase' in scope
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AILiveActivity.swift:43:37: error: cannot find type 'OrbPhase' in scope
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AILiveActivity.swift:45:19: error: cannot find 'AIRuntimeError' in scope
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AILiveActivity.swift:69:38: error: cannot find type 'OrbPhase' in scope
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AILiveActivity.swift:88:31: error: cannot find type 'OrbPhase' in scope
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AILiveActivity.swift:94:31: error: cannot find type 'OrbPhase' in scope
