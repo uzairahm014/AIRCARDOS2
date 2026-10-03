@@ -61,6 +61,16 @@ jobs:
             echo "No .app produced - the build step above failed."
             exit 1
           fi
+          # Copy the Live Activity extension into the app bundle if the build
+          # produced one separately.
+          EXT="$(find build/DerivedData/Build/Products -name 'AirCardLiveActivity.appex' -type d | head -n 1)"
+          if [ -n "$EXT" ]; then
+            mkdir -p "$APP/PlugIns"
+            cp -R "$EXT" "$APP/PlugIns/"
+            echo "Embedded Live Activity extension."
+          else
+            echo "WARNING: no AirCardLiveActivity.appex found; Lock Screen activity will not work."
+          fi
           rm -rf "$APP/_CodeSignature" "$APP/embedded.mobileprovision"
           mkdir -p build/Payload
           cp -R "$APP" build/Payload/AirCard-iOS.app

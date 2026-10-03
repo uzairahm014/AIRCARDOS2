@@ -15,6 +15,7 @@ public struct AIChatView: View {
     @State private var vision = AIVisionEngine()
     @State private var capabilities = AICapabilityReport()
     @State private var island = NotchIslandState()
+@State private var liveActivity = AILiveActivityCoordinator()
 
     @State private var input: String = ""
     @State private var photoItem: PhotosPickerItem?
@@ -44,12 +45,21 @@ public struct AIChatView: View {
                 .allowsHitTesting(true),
                 alignment: .top
             )
-            .onChange(of: phase) { _, new in island.phase = new }
+            .onChange(of: phase) { _, new in
+                island.phase = new
+                Task { await liveActivity.update(phase: new, detail: island.detail) }
+            }
             .onChange(of: speech.transcript) { _, new in
-                if !new.isEmpty { island.detail = new }
+                if !new.isEmpty {
+                    island.detail = new
+                    Task { await liveActivity.update(phase: phase, detail: new) }
+                }
             }
             .onChange(of: engine.partialAnswer) { _, new in
-                if !new.isEmpty { island.detail = new }
+                if !new.isEmpty {
+                    island.detail = new
+                    Task { await liveActivity.update(phase: phase, detail: new) }
+                }
             }
         }
     }
@@ -116,6 +126,29 @@ public struct AIChatView: View {
 
             if let why = capabilities.explanation(for: .textGeneration) {
                 Label(why, systemImage: "exclamationmark.triangle")
+                    .font(.caption2)
+                    .foregroundStyle(.orange)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal)
+            }
+
+            // The Lock Screen / Notification Center surface. On a phone with a
+            // hardware Dynamic Island this also fills the island; this one has
+            // a notch, so it shows on the Lock Screen only.
+            Button {
+                Task { await liveActivity.stop() }
+            } label: {
+                Label(
+                    liveActivity.isRunning ? "Hide from Lock Screen" : "Show on Lock Screen",
+                    systemImage: liveActivity.isRunning ? "lock.open" : "lock"
+                )
+                .font(.caption2)
+            }
+            .buttonStyle(.bordered)
+            .controlSize(.mini)
+
+            if let err = liveActivity.lastError {
+                Text(err)
                     .font(.caption2)
                     .foregroundStyle(.orange)
                     .multilineTextAlignment(.center)

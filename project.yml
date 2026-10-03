@@ -40,6 +40,29 @@ targets:
         # idevice's static lib pulls in C++ symbols (aws-lc); link libc++.
         OTHER_LDFLAGS: "-lc++"
         GENERATE_INFOPLIST_FILE: NO
+
+  # Live Activity extension. This is what renders the AI on the Lock Screen and
+  # Notification Center (and in the Dynamic Island on devices that have one).
+  # It has to be a separate extension target because ActivityKit renders it
+  # out of process.
+  AirCardLiveActivity:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: ios-app/AirCardLiveActivity
+      - path: ios-app/AirCardAI/AILiveActivity.swift
+    settings:
+      base:
+        PRODUCT_NAME: AirCardLiveActivity
+        PRODUCT_BUNDLE_IDENTIFIER: com.mak5er.aircard.liveactivity
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_NSExtension_NSExtensionPointIdentifier: com.apple.widgetkit-extension
+        INFOPLIST_KEY_CFBundleDisplayName: AirCard AI
+        SKIP_INSTALL: YES
+        TARGETED_DEVICE_FAMILY: "1"
+    dependencies:
+      - target: AirCard-iOS
+        embed: false
   AirCard-iOSTests:
     type: bundle.unit-test
     platform: iOS
@@ -57,6 +80,7 @@ schemes:
     build:
       targets:
         AirCard-iOS: all
+        AirCardLiveActivity: all
     test:
       targets:
         - AirCard-iOSTests
