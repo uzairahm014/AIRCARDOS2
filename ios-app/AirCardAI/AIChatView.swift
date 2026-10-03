@@ -77,7 +77,7 @@ public struct AIChatView: View {
                     Task {
                         if speech.mode == .listening { speech.stop() }
                         else { do { try await speech.startListening() }
-                              catch { speech.lastError = error.localizedDescription } }
+                              catch { speech.report(error.localizedDescription) } }
                     }
                 } label: {
                     Label(speech.mode == .listening ? "Stop" : "Listen",
@@ -206,7 +206,7 @@ public struct AIChatView: View {
                             speech.stop()
                         } else {
                             do { try await speech.startListening() }
-                            catch { speech.lastError = error.localizedDescription }
+                            catch { speech.report(error.localizedDescription) }
                         }
                     }
                 } label: {
@@ -271,7 +271,7 @@ public struct AIChatView: View {
     private func runVision(on item: PhotosPickerItem) async {
         guard let data = try? await item.loadTransferable(type: Data.self),
               let image = UIImage(data: data) else {
-            vision.lastError = "Could not read that image."
+            vision.report("Could not read that image.")
             return
         }
         await vision.readText(in: image)

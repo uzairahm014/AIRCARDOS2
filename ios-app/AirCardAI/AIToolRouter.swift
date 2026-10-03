@@ -65,11 +65,11 @@ public final class AIToolRouter: Sendable {
     public func run(tool: String, argument: String) async -> AIToolResult {
         guard let tool = find(tool) else {
             let result = AIToolResult(tool: tool, ok: false, summary: "No tool named \(tool).")
-            history.append((tool, argument, result))
+            history.append((tool: tool, argument: argument, result: result))
             return result
         }
         let result = await tool.run(argument: argument)
-        history.append((tool, argument, result))
+        history.append((tool: tool, argument: argument, result: result))
         return result
     }
 }
@@ -84,8 +84,8 @@ public struct DeviceInfoTool: AITool {
     public var usageHint: String { "use when the user asks what device this is or what the AI can do" }
 
     public func run(argument: String) async -> AIToolResult {
-        let device = UIDevice.current
-        let report = await MainActor.run { AICapabilityReport() }
+        let device = await MainActor.run { UIDevice.current }
+        let report = await AICapabilityReport()
         let summary = "\(device.model) on iOS \(device.systemVersion). \(report.summary)"
         return AIToolResult(tool: name, ok: true, summary: summary, detail: report.reasons.map { "\($0.key.rawValue): \($0.value.explanation)" }.joined(separator: "; "))
     }
@@ -130,7 +130,7 @@ public struct MathTool: AITool {
         guard expr.unicodeScalars.allSatisfy({ allowed.contains($0) }) else {
             return AIToolResult(tool: name, ok: false, summary: "Only digits and + - * / ( ) are allowed.")
         }
-        guard let result = (expr as NSExpression).value(for: nil, with: nil, context: nil) as? Double else {
+        guard let result = Evaluator.evaluate(expr) else {
             return AIToolResult(tool: name, ok: false, summary: "Could not evaluate '\(expr)'.")
         }
         return AIToolResult(tool: name, ok: true, summary: "\(expr) = \(result)")
@@ -152,3 +152,98 @@ public struct DateTimeTool: AITool {
 }
 
 import UIKit
+// MARK: - Arithmetic
+
+/// A tiny recursive-descent evaluator for `+ - * / ( )` over numbers.
+///
+/// This replaces `NSExpression`, which is unavailable in current SDKs and is
+/// unsafe to evaluate anyway: it can call Objective-C selectors. This parser
+/// only ever produces a Double from digits and four operators, so a tool call
+/// cannot do anything except arithmetic.
+enum Evaluator {
+    static func evaluate(_ input: String) -> Double? {
+        let chars = Array(input)
+        var pos = 0
+
+        func peek() -> Character? { pos < chars.count ? chars[pos] : nil }
+
+        func skipSpaces() {
+            while pos < chars.count, chars[pos] == " " { pos += 1 }
+        }
+
+        func parseNumber() -> Double? {
+            skipSpaces()
+            let start = pos
+            var seenDot = false
+            while pos < chars.count, chars[pos].isNumber || chars[pos] == "." {
+                if chars[pos] == "." {
+                    if seenDot { return nil }
+                    seenDot = true
+                }
+                pos += 1
+            }
+            guard pos > start else { return nil }
+            return Double(String(chars[start..<pos]))
+        }
+
+        // expression := term (('+' | '-') term)*
+        func parseExpression() -> Double? {
+            guard var value = parseTerm() else { return nil }
+            while true {
+                skipSpaces()
+                guard let op = peek(), op == "+" || op == "-" else { break }
+                pos += 1
+                guard let rhs = parseTerm() else { return nil }
+                value = (op == "+") ? value + rhs : value - rhs
+            }
+            return value
+        }
+
+        // term := factor (('*' | '/') factor)*
+        func parseTerm() -> Double? {
+            guard var value = parseFactor() else { return nil }
+            while true {
+                skipSpaces()
+                guard let op = peek(), op == "*" || op == "/" else { break }
+                pos += 1
+                guard let rhs = parseFactor() else { return nil }
+                if op == "*" {
+                    value *= rhs
+                } else {
+                    guard rhs != 0 else { return nil }  // no infinity, no crash
+                    value /= rhs
+                }
+            }
+            return value
+        }
+
+        // factor := '-' number | '(' expression ')' | number
+        func parseFactor() -> Double? {
+            skipSpaces()
+            guard let c = peek() else { return nil }
+            if c == "-" {
+                pos += 1
+                guard let n = parseFactor() else { return nil }
+                return -n
+            }
+            if c == "+" {
+                pos += 1
+                return parseFactor()
+            }
+            if c == "(" {
+                pos += 1
+                guard let inner = parseExpression() else { return nil }
+                skipSpaces()
+                guard peek() == ")" else { return nil }
+                pos += 1
+                return inner
+            }
+            return parseNumber()
+        }
+
+        guard let result = parseExpression() else { return nil }
+        skipSpaces()
+        guard pos == chars.count else { return nil }   // trailing junk = invalid
+        return result
+    }
+}

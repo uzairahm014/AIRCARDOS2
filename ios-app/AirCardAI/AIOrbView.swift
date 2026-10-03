@@ -135,7 +135,7 @@ public struct AIOrbView: View {
     private func startAnimating() {
         guard !reduceMotion else { return }
         t = 0
-        withAnimation(.linear(duration: Double.max(0.1, 2.0 / phase.pulseSpeed)).repeatForever(autoreverses: true)) {
+        withAnimation(.linear(duration: Swift.max(0.1, 2.0 / phase.pulseSpeed)).repeatForever(autoreverses: true)) {
             t = .pi * 2
         }
     }

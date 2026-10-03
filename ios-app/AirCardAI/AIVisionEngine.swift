@@ -23,6 +23,9 @@ public final class AIVisionEngine: Sendable {
     public private(set) var observations: [String] = []
     public private(set) var lastError: String?
 
+    /// Record a failure from outside the engine.
+    public func report(_ message: String?) { lastError = message }
+
     private let context = CIContext()
 
     public init() {}
@@ -134,13 +137,13 @@ public final class AIVisionEngine: Sendable {
 
     /// Average colour, for palette-style questions. Real pixels, not a guess.
     public func averageColour(_ image: UIImage) async -> (r: Int, g: Int, b: Int)? {
-        guard let cg = image.cgImage else { return nil }
-        // Render the whole image into a single 1x1 pixel. CIContext does the
-        // averaging for us; reading a pixel out of the original bitmap would
-        // only give us whichever pixel we happened to ask for.
+        guard let ci = CIImage(image: image) else { return nil }
+        // Render into a single 1x1 pixel. CIContext does the averaging for us;
+        // reading a pixel out of the original bitmap would only give us
+        // whichever pixel we happened to ask for.
         var pixel = [UInt8](repeating: 0, count: 4)
         context.render(
-            cg,
+            ci,
             toBitmap: &pixel,
             rowBytes: 4,
             bounds: CGRect(x: 0, y: 0, width: 1, height: 1),

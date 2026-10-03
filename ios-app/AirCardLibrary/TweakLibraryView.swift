@@ -316,7 +316,7 @@ struct Confirmation: Identifiable {
 // MARK: - View model
 
 @available(iOS 17.0, *)
-public final class TweakLibraryModel: ObservableObject {
+public final class TweakLibraryModel: @MainActor ObservableObject {
     @Published public var library: TweakLibrary
     @Published public var filter = LibraryFilter()
     /// Off by default: AirCard never reboots a phone without explicit consent.
@@ -344,7 +344,12 @@ public final class TweakLibraryModel: ObservableObject {
             NSLog("AirCardLibrary: refused apply for %@ (no implementation)", id)
             return
         }
-        let ok = AirCardSystemBridge.shared.apply(entry.def.implID)
-        library.recordApply(id: id, verified: ok)
+        let result = AirCardSystemBridge.shared.apply(entry.def.implID)
+        if !result.succeeded {
+            NSLog("AirCardLibrary: apply failed for %@: %@", id, result.detail)
+        }
+        // Record what actually happened: a write that was issued but not
+        // read back is not the same as a verified apply.
+        library.recordApply(id: id, verified: result.verified)
     }
 }

@@ -28,6 +28,10 @@ public final class SpeechRuntime: NSObject, Sendable {
     public private(set) var authorization: SFSpeechRecognizerAuthorizationStatus = .notDetermined
     public private(set) var lastError: String?
 
+    /// Record a failure from outside the runtime (for example when a caller's
+    /// `catch` block learns why an operation failed).
+    public func report(_ message: String?) { lastError = message }
+
     private let synthesizer = AVSpeechSynthesizer()
     private var request: SFSpeechAudioBufferRecognitionRequest?
     private var task: SFSpeechRecognitionTask?

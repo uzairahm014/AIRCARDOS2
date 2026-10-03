@@ -127,8 +127,8 @@ public final class AirCardSystemBridge {
             ).isEmpty else {
                 append("✖ PosterBoard: container path unknown")
                 return ApplyResult.failure(
-                    "The PosterBoard container path is not set. AirLift has no directory \
-                     listing, so it cannot be discovered — paste it in first."
+                    "The PosterBoard container path is not set. AirLift has no "
+                        + "directory listing, so it cannot be discovered — paste it in first."
                 )
             }
             Task { await model.flashSelectedTendies() }
@@ -139,8 +139,8 @@ public final class AirCardSystemBridge {
             // refuses and says where the real path is.
             append("✖ Status bar: no carrier editor in the iOS build")
             return ApplyResult.failure(
-                "The carrier override is configured in the Windows AirCard app. This iOS \
-                 build has no carrier editor yet, so there is nothing to send."
+                "The carrier override is configured in the Windows AirCard app. This "
+                    + "iOS build has no carrier editor yet, so there is nothing to send."
             )
         }
 
@@ -170,7 +170,7 @@ public final class AirCardSystemBridge {
                 Task { @MainActor [weak self] in
                     self?.append("    \(String(cString: msg))")
                 }
-            }, nil, nil, &outError)
+            }, nil, &outError)
         }
         if let e = outError {
             append("✖ respring failed: \(String(validatingUTF8: e))")
