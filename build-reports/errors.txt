@@ -1,0 +1,1 @@
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/Assets.xcassets: error: No simulator runtime version from [<DVTBuildVersion 22F77>, <DVTBuildVersion 22G86>, <DVTBuildVersion 23A8464>, <DVTBuildVersion 23B86>, <DVTBuildVersion 23C54>] available to use with iphonesimulator SDK version <DVTBuildVersion 22C146>
