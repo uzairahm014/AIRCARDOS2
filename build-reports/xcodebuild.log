@@ -52,8 +52,8 @@ ExecuteExternalTool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/X
 
 ExecuteExternalTool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -x c -c /dev/null
 
-Build description signature: 9330157f670417cf7246792607edf0bf
-Build description path: /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/XCBuildData/9330157f670417cf7246792607edf0bf.xcbuilddata
+Build description signature: f833debd715f404f4fa5f62755ad1988
+Build description path: /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/XCBuildData/f833debd715f404f4fa5f62755ad1988.xcbuilddata
 ClangStatCache /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2/AirCard-iOS.xcodeproj
     /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -o /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache
@@ -66,13 +66,13 @@ CreateBuildDirectory /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2/AirCard-iOS.xcodeproj
     builtin-create-build-directory /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex
 
-CreateBuildDirectory /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos
-    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2/AirCard-iOS.xcodeproj
-    builtin-create-build-directory /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos
-
 WriteAuxiliaryFile /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS-74faad7885c54c850c95b888a16a27bb-VFS-iphoneos/all-product-headers.yaml
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2/AirCard-iOS.xcodeproj
     write-file /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS-74faad7885c54c850c95b888a16a27bb-VFS-iphoneos/all-product-headers.yaml
+
+CreateBuildDirectory /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos
+    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2/AirCard-iOS.xcodeproj
+    builtin-create-build-directory /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos
 
 CreateBuildDirectory /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2/AirCard-iOS.xcodeproj
@@ -82,14 +82,14 @@ ProcessXCFramework /Users/runner/work/AIRCARDOS2/AIRCARDOS2/AirliftFFI.xcframewo
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2/AirCard-iOS.xcodeproj
     builtin-process-xcframework --xcframework /Users/runner/work/AIRCARDOS2/AIRCARDOS2/AirliftFFI.xcframework --platform ios --target-path /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos
 
+WriteAuxiliaryFile /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/Objects-normal/arm64/AirCard-iOS_const_extract_protocols.json (in target 'AirCard-iOS' from project 'AirCard-iOS')
+    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
+    write-file /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/Objects-normal/arm64/AirCard-iOS_const_extract_protocols.json
+
 WriteAuxiliaryFile /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp (in target 'AirCard-iOS' from project 'AirCard-iOS')
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     write-file /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
 -target arm64-apple-ios18.0 '-std=gnu11' -fobjc-arc -fobjc-weak -fmodules -gmodules '-fmodules-cache-path=/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/ModuleCache.noindex' -fpascal-strings -Os -fno-common '-DNS_BLOCK_ASSERTIONS=1' '-DOBJC_OLD_DISPATCH_PROTOTYPES=0' -isysroot /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -g '-fvisibility=hidden' -iquote /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/AirCard-iOS-generated-files.hmap -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/AirCard-iOS-own-target-headers.hmap -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/AirCard-iOS-all-target-headers.hmap -iquote /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/AirCard-iOS-project-headers.hmap -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/include -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/DerivedSources-normal/arm64 -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/DerivedSources/arm64 -I/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/DerivedSources -F/Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos -F.
-
-WriteAuxiliaryFile /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/Objects-normal/arm64/AirCard-iOS_const_extract_protocols.json (in target 'AirCard-iOS' from project 'AirCard-iOS')
-    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
-    write-file /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/Objects-normal/arm64/AirCard-iOS_const_extract_protocols.json
 
 WriteAuxiliaryFile /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/Objects-normal/arm64/AirCard-iOS.SwiftFileList (in target 'AirCard-iOS' from project 'AirCard-iOS')
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
@@ -143,13 +143,13 @@ MkDir /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     /bin/mkdir -p /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCard-iOS.app
 
-MkDir /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/assetcatalog_output/unthinned (in target 'AirCard-iOS' from project 'AirCard-iOS')
-    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
-    /bin/mkdir -p /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/assetcatalog_output/unthinned
-
 MkDir /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/assetcatalog_output/thinned (in target 'AirCard-iOS' from project 'AirCard-iOS')
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     /bin/mkdir -p /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/assetcatalog_output/thinned
+
+MkDir /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/assetcatalog_output/unthinned (in target 'AirCard-iOS' from project 'AirCard-iOS')
+    cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
+    /bin/mkdir -p /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/assetcatalog_output/unthinned
 
 GenerateAssetSymbols /Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/Assets.xcassets (in target 'AirCard-iOS' from project 'AirCard-iOS')
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
@@ -182,48 +182,10 @@ SwiftCompile normal arm64 Compiling\ AIChatEngine.swift,\ AIChatView.swift,\ AIL
 CompileSwift normal arm64 (in target 'AirCard-iOS' from project 'AirCard-iOS')
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:130:91: error: invalid escape sequence in literal
-                    "The PosterBoard container path is not set. AirLift has no directory \
-                                                                                          ^
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:130:21: error: unterminated string literal
-                    "The PosterBoard container path is not set. AirLift has no directory \
-                    ^
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:131:58: error: invalid character in source file
-                     listing, so it cannot be discovered — paste it in first."
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:131:80: error: unterminated string literal
-                     listing, so it cannot be discovered — paste it in first."
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:142:91: error: invalid escape sequence in literal
-                "The carrier override is configured in the Windows AirCard app. This iOS \
-                                                                                          ^
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:142:17: error: unterminated string literal
-                "The carrier override is configured in the Windows AirCard app. This iOS \
-                ^
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:143:79: error: unterminated string literal
-                 build has no carrier editor yet, so there is nothing to send."
-                                                                              ^
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIChatView.swift:80:46: error: cannot assign to property: 'lastError' setter is inaccessible
-                              catch { speech.lastError = error.localizedDescription } }
-                                      ~~~~~~~^~~~~~~~~
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIChatView.swift:209:44: error: cannot assign to property: 'lastError' setter is inaccessible
-                            catch { speech.lastError = error.localizedDescription }
-                                    ~~~~~~~^~~~~~~~~
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIChatView.swift:274:20: error: cannot assign to property: 'lastError' setter is inaccessible
-            vision.lastError = "Could not read that image."
-            ~~~~~~~^~~~~~~~~
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIOrbView.swift:138:48: error: type 'Double' has no member 'max'
-        withAnimation(.linear(duration: Double.max(0.1, 2.0 / phase.pulseSpeed)).repeatForever(autoreverses: true)) {
-                                        ~~~~~~ ^~~
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:72:24: error: cannot convert value of type '(any AITool, String, AIToolResult)' to expected argument type '(tool: String, argument: String, result: AIToolResult)'
-        history.append((tool, argument, result))
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:72:24: error: cannot convert value of type '(tool: any AITool, argument: String, result: AIToolResult)' to expected argument type '(tool: String, argument: String, result: AIToolResult)'
+        history.append((tool: tool, argument: argument, result: result))
                        ^
-                                                as! (tool: String, argument: String, result: AIToolResult)
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:87:22: warning: expression is 'async' but is not marked with 'await'; this is an error in the Swift 6 language mode
-        let device = UIDevice.current
-                     ^~~~~~~~~~~~~~~~
-                     await 
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:87:22: note: property access is 'async'
-        let device = UIDevice.current
-                     ^
+                                                                        as! (tool: String, argument: String, result: AIToolResult)
 /Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:89:26: warning: expression is 'async' but is not marked with 'await'; this is an error in the Swift 6 language mode
         let summary = "\(device.model) on iOS \(device.systemVersion). \(report.summary)"
                          ^~~~~~~~~~~~
@@ -252,31 +214,7 @@ CompileSwift normal arm64 (in target 'AirCard-iOS' from project 'AirCard-iOS')
 /Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:90:77: note: property access is 'async'
         return AIToolResult(tool: name, ok: true, summary: summary, detail: report.reasons.map { "\($0.key.rawValue): \($0.value.explanation)" }.joined(separator: "; "))
                                                                             ^
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:133:51: error: no exact matches in call to instance method 'value'
-        guard let result = (expr as NSExpression).value(for: nil, with: nil, context: nil) as? Double else {
-                                                  ^
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:133:51: note: candidate has partially matching parameter list (forKey: String)
-        guard let result = (expr as NSExpression).value(for: nil, with: nil, context: nil) as? Double else {
-                                                  ^
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:133:51: note: candidate has partially matching parameter list (forKeyPath: String)
-        guard let result = (expr as NSExpression).value(for: nil, with: nil, context: nil) as? Double else {
-                                                  ^
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:133:51: note: candidate has partially matching parameter list (forUndefinedKey: String)
-        guard let result = (expr as NSExpression).value(for: nil, with: nil, context: nil) as? Double else {
-                                                  ^
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:133:62: error: 'nil' requires a contextual type
-        guard let result = (expr as NSExpression).value(for: nil, with: nil, context: nil) as? Double else {
-                                                             ^
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:133:73: error: 'nil' requires a contextual type
-        guard let result = (expr as NSExpression).value(for: nil, with: nil, context: nil) as? Double else {
-                                                                        ^
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:133:87: error: 'nil' requires a contextual type
-        guard let result = (expr as NSExpression).value(for: nil, with: nil, context: nil) as? Double else {
-                                                                                      ^
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIToolRouter.swift:133:29: error: cannot convert value of type 'String' to type 'NSExpression' in coercion
-        guard let result = (expr as NSExpression).value(for: nil, with: nil, context: nil) as? Double else {
-                            ^~~~
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIVisionEngine.swift:52:29: warning: capture of 'handler' with non-sendable type 'VNImageRequestHandler' in a '@Sendable' closure
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIVisionEngine.swift:55:29: warning: capture of 'handler' with non-sendable type 'VNImageRequestHandler' in a '@Sendable' closure
                         try handler.perform([request])
                             ^
 /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/Vision.framework/Headers/VNRequestHandler.h:65:12: note: class 'VNImageRequestHandler' does not conform to the 'Sendable' protocol
@@ -286,47 +224,36 @@ CompileSwift normal arm64 (in target 'AirCard-iOS' from project 'AirCard-iOS')
 import Vision
 ^
 @preconcurrency 
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIVisionEngine.swift:52:46: warning: capture of 'request' with non-sendable type 'VNRecognizeTextRequest' in a '@Sendable' closure
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIVisionEngine.swift:55:46: warning: capture of 'request' with non-sendable type 'VNRecognizeTextRequest' in a '@Sendable' closure
                         try handler.perform([request])
                                              ^
 /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/Vision.framework/Headers/VNRecognizeTextRequest.h:31:12: note: class 'VNRecognizeTextRequest' does not conform to the 'Sendable' protocol
 @interface VNRecognizeTextRequest : VNImageBasedRequest <VNRequestProgressProviding>
            ^
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIVisionEngine.swift:91:34: warning: capture of 'handler' with non-sendable type 'VNImageRequestHandler' in a '@Sendable' closure
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIVisionEngine.swift:94:34: warning: capture of 'handler' with non-sendable type 'VNImageRequestHandler' in a '@Sendable' closure
                         do { try handler.perform([classify]); cont.resume() }
                                  ^
 /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/Vision.framework/Headers/VNRequestHandler.h:65:12: note: class 'VNImageRequestHandler' does not conform to the 'Sendable' protocol
 @interface VNImageRequestHandler : NSObject
            ^
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIVisionEngine.swift:91:51: warning: capture of 'classify' with non-sendable type 'VNClassifyImageRequest' in a '@Sendable' closure
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIVisionEngine.swift:94:51: warning: capture of 'classify' with non-sendable type 'VNClassifyImageRequest' in a '@Sendable' closure
                         do { try handler.perform([classify]); cont.resume() }
                                                   ^
 /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/Vision.framework/Headers/VNClassifyImageRequest.h:23:12: note: class 'VNClassifyImageRequest' does not conform to the 'Sendable' protocol
 @interface VNClassifyImageRequest : VNImageBasedRequest
            ^
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIVisionEngine.swift:112:34: warning: capture of 'handler' with non-sendable type 'VNImageRequestHandler' in a '@Sendable' closure
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIVisionEngine.swift:115:34: warning: capture of 'handler' with non-sendable type 'VNImageRequestHandler' in a '@Sendable' closure
                         do { try handler.perform([detect]); cont.resume() }
                                  ^
 /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/Vision.framework/Headers/VNRequestHandler.h:65:12: note: class 'VNImageRequestHandler' does not conform to the 'Sendable' protocol
 @interface VNImageRequestHandler : NSObject
            ^
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIVisionEngine.swift:112:51: warning: capture of 'detect' with non-sendable type 'VNDetectHumanRectanglesRequest' in a '@Sendable' closure
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIVisionEngine.swift:115:51: warning: capture of 'detect' with non-sendable type 'VNDetectHumanRectanglesRequest' in a '@Sendable' closure
                         do { try handler.perform([detect]); cont.resume() }
                                                   ^
 /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/Vision.framework/Headers/VNDetectHumanRectanglesRequest.h:24:12: note: class 'VNDetectHumanRectanglesRequest' does not conform to the 'Sendable' protocol
 @interface VNDetectHumanRectanglesRequest : VNImageBasedRequest
            ^
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardAI/AIVisionEngine.swift:143:13: error: cannot convert value of type 'CGImage' to expected argument type 'CIImage'
-            cg,
-            ^
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:131:31: error: cannot find 'so' in scope
-                     listing, so it cannot be discovered — paste it in first."
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:143:51: error: cannot find 'so' in scope
-                 build has no carrier editor yet, so there is nothing to send."
-                                                  ^~
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:173:26: error: extra argument in call
-            }, nil, nil, &outError)
-~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
 /Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:176:44: warning: string interpolation produces a debug description for an optional value; did you mean to make this explicit?
             append("✖ respring failed: \(String(validatingUTF8: e))")
 /Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:176:44: note: use 'String(describing:)' to silence this warning
@@ -363,12 +290,12 @@ import Vision
 /Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/PairingController.swift:29:24: note: static property declared here
     private static let altIRKKey = "aircardPairingHostAltIRK"
                        ^
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/TweakLibraryView.swift:348:47: error: cannot convert value of type 'ApplyResult' to expected argument type 'Bool'
-        library.recordApply(id: id, verified: ok)
-                                              ^
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/TweakLibraryView.swift:347:45: error: call to main actor-isolated instance method 'apply' in a synchronous nonisolated context
-        let ok = AirCardSystemBridge.shared.apply(entry.def.implID)
-                                            ^
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/TweakLibraryView.swift:319:39: error: unknown attribute 'MainActor'
+public final class TweakLibraryModel: @MainActor ObservableObject {
+                                      ^
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/TweakLibraryView.swift:347:49: error: call to main actor-isolated instance method 'apply' in a synchronous nonisolated context
+        let result = AirCardSystemBridge.shared.apply(entry.def.implID)
+                                                ^
 /Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:79:17: note: calls to instance method 'apply' from outside of its actor context are implicitly asynchronous
     public func apply(_ implID: String) -> ApplyResult {
                 ^
@@ -376,9 +303,9 @@ import Vision
     public func apply(id: String) {
                 ^
     @MainActor 
-/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/TweakLibraryView.swift:347:38: warning: main actor-isolated static property 'shared' can not be referenced from a nonisolated context; this is an error in the Swift 6 language mode
-        let ok = AirCardSystemBridge.shared.apply(entry.def.implID)
-                                     ^
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/TweakLibraryView.swift:347:42: warning: main actor-isolated static property 'shared' can not be referenced from a nonisolated context; this is an error in the Swift 6 language mode
+        let result = AirCardSystemBridge.shared.apply(entry.def.implID)
+                                         ^
 /Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/AirCardLibrary/AirCardSystemBridge.swift:60:23: note: static property declared here
     public static let shared = AirCardSystemBridge()
                       ^
@@ -397,8 +324,8 @@ LinkAssetCatalog /Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/Assets.xcasset
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
     builtin-linkAssetCatalog --thinned /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/assetcatalog_output/thinned --thinned-dependencies /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/assetcatalog_dependencies_thinned --thinned-info-plist-content /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/assetcatalog_generated_info.plist_thinned --unthinned /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/assetcatalog_output/unthinned --unthinned-dependencies /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/assetcatalog_dependencies_unthinned --unthinned-info-plist-content /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/assetcatalog_generated_info.plist_unthinned --output /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCard-iOS.app --plist-output /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Intermediates.noindex/AirCard-iOS.build/Release-iphoneos/AirCard-iOS.build/assetcatalog_generated_info.plist
 note: Emplaced /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCard-iOS.app/AppIcon60x60@2x.png (in target 'AirCard-iOS' from project 'AirCard-iOS')
-note: Emplaced /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCard-iOS.app/AppIcon76x76@2x~ipad.png (in target 'AirCard-iOS' from project 'AirCard-iOS')
 note: Emplaced /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCard-iOS.app/Assets.car (in target 'AirCard-iOS' from project 'AirCard-iOS')
+note: Emplaced /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCard-iOS.app/AppIcon76x76@2x~ipad.png (in target 'AirCard-iOS' from project 'AirCard-iOS')
 
 ProcessInfoPlistFile /Users/runner/work/AIRCARDOS2/AIRCARDOS2/build/DerivedData/Build/Products/Release-iphoneos/AirCard-iOS.app/Info.plist /Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/Info.plist (in target 'AirCard-iOS' from project 'AirCard-iOS')
     cd /Users/runner/work/AIRCARDOS2/AIRCARDOS2
