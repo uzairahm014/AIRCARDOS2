@@ -22,6 +22,11 @@ targets:
     platform: iOS
     sources:
       - path: ios-app
+        # The Live Activity is a separate extension with its own @main.
+        # Without this it would also compile into the app and produce
+        # "'main' attribute can only apply to one type in a module".
+        excludes:
+          - AirCardLiveActivity/**
       # The tweak library is data shared with the desktop engine. The iOS app
       # parses the same JSON so a tweak cannot look supported on one platform
       # and unsupported on the other.
