@@ -1,0 +1,81 @@
+# Codemagic build configuration.
+#
+# This exists because you cannot build an iOS app on Windows: Xcode only runs
+# on macOS. Codemagic provides a macOS build machine, and this file describes
+# the build so it happens without you owning a Mac.
+#
+# How to use it (from Windows, in a browser):
+#   1. Push this repo to GitHub.
+#   2. Sign in at codemagic.io with your GitHub account.
+#   3. Add the repo, and let it detect this file.
+#   4. Press "Start new build".
+#   5. Download the .ipa from the artifacts.
+#
+# Then install the IPA on your Windows PC with a sideloader (Sideloadly or
+# AltStore, both of which run on Windows and will sign it with your Apple ID).
+#
+# NOT VERIFIED: this configuration has never been executed, because there is
+# no macOS runner on this machine to test it. Expect to fix the ordinary
+# first-build errors in the Swift sources.
+
+name: aircard-ios
+display_name: AirCard-iOS
+
+type: ios
+
+environment:
+  ios_signing_enabled: false
+
+  # Pin the toolchain so a Codemagic Xcode bump does not silently change the
+  # SDK the app is built against.
+  xcode_version: "16.2"
+
+scripts:
+  - name: select Xcode
+    script: |
+      sudo xcode-select -s /Applications/Xcode_16.2.app
+
+  - name: install xcodegen
+    script: |
+      brew install xcodegen
+
+  - name: generate project
+    script: |
+      xcodegen generate
+
+  - name: build
+    script: |
+      set -euo pipefail
+      xcodebuild \
+        -project AirCard-iOS.xcodeproj \
+        -scheme AirCard-iOS \
+        -configuration Release \
+        -destination 'generic/platform=iOS' \
+        -derivedDataPath build/DerivedData \
+        CODE_SIGN_IDENTITY="" \
+        CODE_SIGNING_REQUIRED=NO \
+        CODE_SIGNING_ALLOWED=NO \
+        CODE_SIGN_ENTITLEMENTS="" \
+        clean build
+
+  - name: package ipa
+    script: |
+      set -euo pipefail
+      APP="$(find build/DerivedData/Build/Products -name 'AirCard-iOS.app' -type d | head -n 1)"
+      if [ -z "$APP" ]; then
+        echo "Build produced no .app - read the xcodebuild output above."
+        exit 1
+      fi
+      rm -rf "$APP/_CodeSignature" "$APP/embedded.mobileprovision"
+      mkdir -p build/Payload
+      cp -R "$APP" build/Payload/AirCard-iOS.app
+      cd build
+      zip -qr AirCard-iOS.ipa Payload
+      rm -rf Payload
+      echo "Built: build/AirCard-iOS.ipa"
+
+artifacts:
+  - build/AirCard-iOS.ipa
+
+# The IPA is unsigned. Sideload it from Windows with Sideloadly or AltStore,
+# both of which apply your Apple ID signature.
