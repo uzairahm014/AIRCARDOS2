@@ -57,12 +57,22 @@ public enum TweakOperation: String, CaseIterable {
 
 @MainActor
 public final class AirCardSystemBridge {
+    /// Where FFI log lines go. A C function pointer cannot capture context, so
+    /// the callback reads this static instead of holding a reference.
+    nonisolated(unsafe) static var logSink: ((String) -> Void)?
     public static let shared = AirCardSystemBridge()
 
     /// Rolling log shown in Developer mode.
     public private(set) var log: [String] = []
 
-    private init() {}
+    private init() {
+        // Route FFI log lines into the same stream the UI shows. The callback
+        // itself cannot hold a reference (see bridgeLogCallback), so it reads
+        // this sink instead.
+        logSink = { [weak self] line in
+            self?.append("    \(line)")
+        }
+    }
 
     /// Map a library `impl_id` onto an operation, or nil when there is no
     /// compiled implementation. Nil here is the reason the UI shows no button.
@@ -165,12 +175,9 @@ public final class AirCardSystemBridge {
         append("↻ respring requested: \(reason)")
         var outError: UnsafeMutablePointer<CChar>?
         let rc = pairing.withCString { p in
-            al_device_respring(p, { _, msg in
-                guard let msg = msg else { return }
-                Task { @MainActor [weak self] in
-                    self?.append("    \(String(cString: msg))")
-                }
-            }, nil, &outError)
+            // A C function pointer cannot capture context, so this closure
+            // reaches the sink through a static rather than `self`.
+            al_device_respring(p, bridgeLogCallback, nil, &outError)
         }
         if let e = outError {
             append("✖ respring failed: \(String(validatingUTF8: e))")
@@ -190,4 +197,19 @@ public final class AirCardSystemBridge {
     }
 
     public func clearLog() { log.removeAll() }
+}
+
+
+/// Non-capturing C callback for the FFI log channel.
+///
+/// Swift cannot form a C function pointer from a closure that captures
+/// context, so this routes through a static sink instead of a captured
+/// `self`. Kept at file scope and `nonisolated` so it is safe to call from
+/// whatever thread the Rust side invokes it on.
+private let bridgeLogCallback: ALLogCallback = { _, msg in
+    guard let msg = msg else { return }
+    let line = String(cString: msg)
+    Task { @MainActor in
+        AirCardSystemBridge.logSink?(line)
+    }
 }

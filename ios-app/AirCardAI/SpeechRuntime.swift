@@ -59,9 +59,9 @@ public final class SpeechRuntime: NSObject, Sendable {
 
     /// Stream microphone audio into an on-device recognizer, appending to `transcript`.
     public func startListening(locale: Locale = .current) async throws {
-        guard authorization == .authorized else {
-            let ok = await requestAuthorization()
-            guard ok else {
+        if authorization != .authorized {
+            let granted = await requestAuthorization()
+            guard granted else {
                 lastError = "Speech recognition permission was denied."
                 throw AIRuntimeError.permissionDenied
             }
