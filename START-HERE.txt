@@ -1,0 +1,92 @@
+================================================================
+  AIRCARD-iOS  -  HOW TO GET THIS ON YOUR PHONE
+================================================================
+
+  THIS FOLDER IS ALREADY PACKED AND READY.
+  Do not unzip anything else. Do not reorganise anything.
+
+  All 250 files are saved and committed already.
+
+----------------------------------------------------------------
+  WHAT TO DO
+----------------------------------------------------------------
+
+  1.  DOUBLE-CLICK  SEND-TO-GITHUB.bat
+
+      (It may ask "Do you want to allow..." -> click Yes.)
+
+  2.  Your browser opens to github.com/new
+
+        - type  AirCard-iOS  in the repository name box
+        - TICK the box "Add a README file"
+        - click the green "Create repository"
+
+  3.  Go back to the black window and press any key
+
+  4.  Paste your repo address when asked.
+
+      Get it from the GitHub page - the green "Code" button,
+      then copy the HTTPS address. It looks like:
+
+        https://github.com/YOURNAME/AirCard-iOS.git
+
+  5.  Wait. It uploads about 127 MB, so a few minutes.
+
+      If GitHub asks for a password, that is the wrong thing.
+      It wants a "Personal Access Token":
+
+        https://github.com/settings/tokens
+        -> Generate new token (classic)
+        -> tick the  "repo"  box
+        -> generate, copy the token it shows
+
+----------------------------------------------------------------
+  AFTER THE UPLOAD
+----------------------------------------------------------------
+
+  Go to  https://codemagic.io
+
+    1. Sign in with GitHub
+    2. "Add new application"  ->  pick AirCard-iOS
+    3. Press "Start new build"
+    4. Wait about 10-15 minutes
+    5. Open the build -> "Artifacts" tab -> download the .ipa
+
+  Then install that .ipa on your phone the way you already
+  know how. That part is already handled.
+
+================================================================
+  IF SOMETHING GOES WRONG
+================================================================
+
+  THE FIRST BUILD WILL PROBABLY FAIL.
+
+  Not because this is broken - because the iPhone app code has
+  never been through Apple's compiler. Expect real errors.
+
+  When it fails:
+
+    1. Open the failed build in Codemagic
+    2. Click "Raw log"
+    3. Find the first line that says  error:
+    4. Send me that line
+
+  I fix it, you push again, build again. It normally takes
+  two or three rounds to get through.
+
+================================================================
+
+  IF YOU WOULD RATHER NOT USE GITHUB AT ALL
+================================================================
+
+  Two options, both need money or time:
+
+    - Rent a Mac in your browser at macincloud.com (~$49/month).
+      You get a real Mac desktop and I can walk you through
+      building it there directly. Most reliable.
+
+    - A used Mac Mini, often cheaper than a year of cloud Mac.
+      One-time cost, then everything builds locally forever.
+
+  These are genuinely easier in some ways. The batch file is
+  free and takes about five minutes if it works, though.
