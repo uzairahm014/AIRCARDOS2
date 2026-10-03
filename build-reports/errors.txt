@@ -1,0 +1,1 @@
+/Users/runner/work/AIRCARDOS2/AIRCARDOS2/ios-app/TendiesEngine.swift:506:12: error: initializer for conditional binding must have Optional type, not 'String'
